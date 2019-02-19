@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>JEJU BEER</title>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<!-- js -->
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+	<script src="./lib/jquery/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="./js/common.js"></script>
+
+    <script>
+    	$(document).ready(function(){
+    		$('.tourlist').on('click', function(){
+
+				alert("준비중입니다.");
+			});
+
+			$('.tourcheck').on('click', function(){
+
+				alert("준비중입니다.");
+			});
+	});//ready
+	
+	</script>
+</head>
+<body>
+	<div class="sns">
+		<a href="https://www.facebook.com/jejubeerofficial/"><img src="./img/top_facebook.svg" alt="sns"></a>
+		<a href="https://www.instagram.com/jejubeerofficial/"><img src="./img/top_instagram.svg" alt="sns"></a>
+		<a href="https://www.youtube.com/channel/UCAEuNeNRuYqjEJrs6OtnpoQ"><img src="./img/top_naverpost.svg" alt="sns"></a>
+		<a href="https://post.naver.com/jejubeerpost"><img src="./img/top_youtube.svg" alt="sns"></a>
+	</div>
+	<div class="wrap">
+		<div class="inner">
+			<div class="mainlogo">
+				<div class="left"></div>
+				<span><em>양조장 투어 신청</em></span>
+			    <a href="index.html"><img src="./img/mainlogo.PNG" alt="mainlogo"></a>
+			</div>
+
+			<!-- ########################################################## -->
+
+			<div class="slider2">
+				
+				<div class="sliderframe">
+					<input type="radio" name="pageControl" id="pg1" checked>
+					<input type="radio" name="pageControl" id="pg2">
+					<input type="radio" name="pageControl" id="pg3">
+					<input type="radio" name="pageControl" id="pg4">
+					<input type="radio" name="pageControl" id="pg5">
+					<div id="brand2">
+						<h1>BREWERY</h1>
+						<p>제주의 깨끗한 바다를 바라보며 올레길을 경험하듯이,<br>양조장에선 맥주가 완성되는 과정까지도 즐거운 여정이 될 것입니다.</p>
+					</div>
+					<ul>
+						<li>
+							<img src="./img/brew1.jpg" alt="brewimg">
+							<label for="pg2" class="next">NEXT</label>
+						</li>
+						<li>
+							<img src="./img/brew2.jpg" alt="brewimg">
+							<label for="pg1" class="prv">PREV</label>
+							<label for="pg3" class="next">NEXT</label>
+						</li>
+						<li>
+							<img src="./img/brew3.jpg" alt="brewimg">
+							<label for="pg2" class="prv">PREV</label>
+							<label for="pg4" class="next">NEXT</label>
+						</li>
+						<li>
+							<img src="./img/brew4.jpg" alt="brewimg">
+							<label for="pg3" class="prv">PREV</label>
+							<label for="pg5" class="next">NEXT</label>
+						</li>
+						<li>
+							<img src="./img/brew5.jpg" alt="brewimg">
+							<label for="pg4" class="prv">PREV</label>
+						
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+
+				<div class="videocon">
+					<video class="video" autoplay loop muted>
+						<source src="./img/BRW1.mp4" type="video/mp4" />
+					</video>
+					<a href="https://www.youtube.com/embed/dyBLr3SO8NQ?rel=0&amp;autoplay=1" data-movie-id="dyBLr3SO8NQ" class="youtube goPlay"><div class="arrow-right"></div></a>
+					<div class="videotext">
+						<h1><u>INGREDIENTS</u></h1>
+						<p>제주맥주 양조전문가들이 직접 고른 홉에<br> 제주의 깨끗한 물과, 유기농 감귤껍질 그리고<br> 맥아를 섞으면 풍미 가득한<br> 맥주가 탄생합니다.<br> 이런 게 바로 마법이지요!</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+
+				<div class="videocon2">
+					<video class="video" autoplay loop muted>
+						<source src="./img/BRW2.mp4" type="video/mp4" />
+					</video>
+					<a href="https://www.youtube.com/embed/iNKDEHcebrE?rel=0&amp;autoplay=1" data-movie-id="iNKDEHcebrE" class="youtube goPlay"></a>
+					<div class="arrow-right"></div>
+					<div class="videotext">
+						<h1><u>BEER MASTER</u></h1>
+						<p>뉴욕의 NO.1 크래프트 맥주인<br>브루클린 브루어리의 노하우와<br> 세계적 브루 마스터의 레시피가 제주에서 시작됩니다.<br><br>그 환상적인 케미가 궁금하세요?<br>여기 비어 마스터들의 맛있는 이야기를 들어보시죠.</p>
+					</div>
+				</div>
+
+			<div class="clearfix"></div>
+			</div>
+
+
+		<!-- ########################################################## -->
+
+		<input type="checkbox" id="btn">
+		<aside class="menu">
+			<label for="btn"></label>
+			<div class="submenu"><a href="#"><b><U>menu</U></b></a></div>
+			<div class="submenu"><a href="./index.html"><b>index</b></a></div>
+			<div class="submenu"><a href="./brewery.html"><b>brewery</b></a></div>
+			<div class="submenu"><a href="./beer.html"><b>beer</b></a></div>
+			<div class="submenu"><a href="./tour.html"><b>tour</b></a></div>
+			<div class="submenu"><a href="./ourstory.html"><b>our story</b></a></div>
+			<div class="submenu"><a href="./contactus.html"><b>contact us</b></a></div>
+		</aside>
+		<label for="btn" class="button">
+				<i></i>
+				<i></i>
+				<i></i>
+		</label>
+		<label for="btn" class="modal"></label>
+
+		<input type="checkbox" id="btn2">
+		<div class="tourgogo">
+			<div class="tourinner">
+				<div class="tourheader">
+					<h3>양조장 투어 예약하기</h3>
+					<p class="headertit">제주의 깨끗한 바다를 바라보며 올레길을 경험하듯이,<br>
+					양조장에선 맥주가 완성되는 과정까지도 즐거운 여정이 될 것입니다.</p>
+					<p>양조장 투어는 사전예약제로 운영됩니다.<br>
+					운영시간 : 13:00~19:00 (목, 금, 토, 일 / <span>월,화,수 휴무</span>)<br>
+					주소 : 제주시 한림읍 금능농공길 62-11 <a href="./contactus.html">지도보기</a></p>
+					<a href="#" class="tourlist">양조장 투어 예약</a>
+					<a href="#" class="tourcheck">양조장 투어 예약 확인</a>
+				</div>
+				<div class="tourinfo">
+					<p class="infotit">양조장 투어 유의사항</p>
+					<p>방문 인원이 몰릴 경우, 여유로운 관람을 위해 펍을 먼저 이용하신 뒤 투어에 참여하실 수 있도록 권장해 드리고 있으며, 당일 예약은 불가합니다.</p>
+					<ul>
+						<li>이용 금액 : 12,000원 (미취학 아동 / 7세까지 무료)</li>
+						<li>양조장 평일 월,화,수 휴무</li>
+						<li>PUB 운영 20시 마감 (19시 투어시 참고)</li>
+						<li>반려동물 출입제한</li>
+						<li>이용일 기준 4~7일 전 환불 : 50% 수수료 발생 (날짜 변경 가능)</li>
+						<li>이용일 기준 1~3일내 환불 : 불가 (날짜 변경 가능)</li>
+						<li>당일 취소/환불/날짜 변경 : 모두 불가</li>
+						<li>기타 문의 : jejubeer@jejubeer.co.kr</li>
+						<li>단체 예약 문의 jejumkt@jejubeer.co.kr</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<label for="btn2" class="button2">
+			<i></i>
+			<i></i>
+			<i></i>
+		</label>
+	</div><!-- wrap -->
+	<div class="bottom"><p>제주패밀리 주식회사 / 서울시 중구 동호로 228 / 대표전화 02-2235-5559 / 사업자등록번호 782-81-00834 / 대표자 김상욱
+COPYRIGHT 2018 @ JEJU BEER COMPANY.</p></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* RESET */
+*,:before,:after {margin: 0; padding: 0; color: inherit; text-decoration: inherit; font-style: inherit; border: 0 solid transparent; outline: 0 solid transparent; background: transparent none center center no-repeat; box-sizing: border-box;}
+ul, ol, li {list-style: none;}
+table {table-layout: fixed;}
+h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: inherit;}
+label, button, [type=button], [type=submit], [type=reset], a {cursor: pointer;}
+
+
+/* CLASS */
+.clearfix:after {content: ""; display: block; clear: both;}
+.ellipsis {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.hidden {display: none; width: 0; height: 0; visibility: hidden; opacity: 0;}
+.bold {font-weight: 700;}
+
+/* GLOBAL */
+[type=checkbox], [type=radio] {display: none;}
+.inner {display: block; position: relative; margin: auto; width: 1805px; height: 100%; overflow: hidden;}
+.inner:after {content: ""; display: block; clear: both;}
+
+.stop-scrolling {height: 100%; overflow: hidden;}
+
+.hide {visibility: hidden;}
+
+.more {position: relative; width: 230px; height: 150px; border: 1px solid #ddd; color: #eee; line-height: 170px; text-align: center; font-size: 13px;}
+.more:after {content: ""; position: absolute; left: 50%; top: 58px; width: 15px; height: 15px; margin-left: -8px; background-image: url(../img/sp_icon.png); background-position: 0 -215px; transform: rotate(0deg); transition: all .3s;}
+.more:hover:after {transform: rotate(90deg);}
+
+body {position: relative;}
+.sns {position: absolute; left: 10px; top: 90px; z-index: 3;}
+.sns a {width: 30px; height: 30px; display: block; margin-bottom: 10px;}
+.sns a img {}

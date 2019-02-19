@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>JEJU BEER</title>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="./lib/owlowl.theme.default.css">
+	<!-- js -->
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+	<script src="./lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="./lib/owl/owl.carousel.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="./js/common.js"></script>
+
+    <script>
+    	$(document).ready(function(){
+
+			var owl = $('.owl-carousel');
+			owl.owlCarousel({
+			    items:1,
+			    loop:true,
+			    margin:0,
+			    autoplay:true,
+			    autoplayTimeout:7500,
+			    autoplayHoverPause:false
+			});
+			$('.play').on('click',function(){
+			    owl.trigger('play.owl.autoplay',[2000])
+			})
+			$('.stop').on('click',function(){
+			    owl.trigger('stop.owl.autoplay')
+			})
+
+			$('.owl-dots').hide();
+			
+
+			$('#pop [type=checkbox]').show();
+
+			var cookie = { 
+				set : function(name, value, expire){ // 쿠키를 생성하는 메소드
+
+					var D = new Date(); 
+					D.setTime(D.getTime()+(24*60*60*1000*expire)); // Cookie가 소멸할 시간
+
+					document.cookie = name+'='+value+'; expires='+D.toUTCString(); // Cookie를 생성
+					
+					cookie.update(); // 생성한 쿠키를 객체로 바꾸기위해 updateCookie함수 실행
+				},
+				update : function(){ // 쿠키를 변환
+
+					var C = document.cookie; 
+
+					C = C.split('; ');
+
+					C.forEach(function(v,i,o){
+
+						v = v.split('='); // 배열로 전환, v=['X','1'];
+
+						cookie[v[0]] = v[1];
+					});
+				},
+				remove : function(name){ // 쿠키를 삭제
+
+					cookie.set(name, '', -1); 
+
+					cookie[name] = null; // 지우기전에 벨류값을 다 비워준다.
+					delete cookie[name]; // delete -> 객체의 속성자체를 지워준다.
+				}
+			}
+			cookie.update();
+
+
+			if (cookie.id) { // 아이디 쿠키가 있으면...
+				$('#user_id').val(cookie.id); // 아이디인풋에 쿠키에 저장된 아이디를 삽입
+				$('.remember_id').attr('checked', true); // 아이디 저장에 체크를 해놓는다.
+			}
+
+
+			$('.btn_login').on('click', function(){
+
+				if ($('.remember_id').is(':checked')) {
+
+					var user_id = $('#user_id').val(); // 인풋에 들어간 아이디값을 저장
+
+					cookie.set('id', user_id, 7); // 쿠키를 생성
+
+				} else {
+
+					cookie.remove('id');
+				}
+			});
+
+
+			if (!cookie.pop) { 
+				$('#pop').show(); 
+			}	
+
+			$('.btn_close').on('click', function(){ 
+
+				if ($('.chk_bx').is(':checked')) { 
+
+					cookie.set('pop', 'off', 7); // 7동안 'off' 쿠키를 생성
+				}
+
+				$('#pop').hide(); 
+			});
+
+			//팝업창을 따라다니게 하기
+			var X;
+			$(document).scroll(function(){
+
+				var T = $(this).scrollTop();
+				var h = $('#pop').height();
+				var H = $(window).height();
+
+
+				if (!X) {
+					$('#pop').css({'top': T+H/2-h/2});
+					X=true;
+				} else {
+					$('#pop').stop().animate({'top': T+H/3-h/2}, 600);
+				}
+
+			}).scroll();
+
+			$('#pop').click(function(){
+
+				$('html, body').animate({scrollTop : 0}, 500);
+			});
+
+			$('.tourlist').on('click', function(){
+
+				alert("준비중입니다.");
+			});
+
+			$('.tourcheck').on('click', function(){
+
+				alert("준비중입니다.");
+			});
+	});//ready
+	
+	</script>
+</head>
+<body>
+	<div class="sns">
+		<a href="https://www.facebook.com/jejubeerofficial/"><img src="./img/top_facebook.svg" alt="sns"></a>
+		<a href="https://www.instagram.com/jejubeerofficial/"><img src="./img/top_instagram.svg" alt="sns"></a>
+		<a href="https://www.youtube.com/channel/UCAEuNeNRuYqjEJrs6OtnpoQ"><img src="./img/top_naverpost.svg" alt="sns"></a>
+		<a href="https://post.naver.com/jejubeerpost"><img src="./img/top_youtube.svg" alt="sns"></a>
+	</div>
+	<div class="wrap">
+		<div class="inner">
+			<div class="mainlogo">
+				<div class="left"></div>
+				<span><em>양조장 투어 신청</em></span>
+			    <a href="index.html"><img src="./img/mainlogo.PNG" alt="mainlogo"></a>
+			</div>
+			
+
+			<!-- ########################################################## -->
+
+			<div class="slider">
+				<!-- <div class="sliderframe">
+					<input type="radio" name="pageControl" id="pg1">
+					<input type="radio" name="pageControl" id="pg2" checked>
+					<input type="radio" name="pageControl" id="pg3">
+					<div id="brand">
+						<h1>FROM JEJU</h1>
+						<p>크래프트 맥주 불모지에서 최고의 글로벌 크래프트 맥주를.</p>
+						<h2>NEW BEER</h2>
+						<p1>양조장, 놀이터이자 관광지, 문화발상지.</p1>
+						<h3>OUR MISSION</h3>
+						<p2>한국 크래프트 맥주의 선구자로써 맥주미식문화를 창조.</p2>
+					</div>
+					<ul>
+						<li>
+							<video class="video-fluid" autoplay loop muted>
+					       	 	<source src="./img/main2.mp4" type="video/mp4" />
+					      	</video> 
+							<label for="pg2" class="next">NEXT</label>
+						</li>
+						<li>
+							<video class="video-fluid" autoplay loop muted>
+					        	<source src="./img/main1.mp4" type="video/mp4" />
+					     	</video>
+							<label for="pg1" class="prv">PREV</label>
+							<label for="pg3" class="next">NEXT</label>
+						</li>
+						<li>
+							<video class="video-fluid" autoplay loop muted>
+			        			<source src="./img/main3.mp4" type="video/mp4" />
+			      			</video>
+							<label for="pg2" class="prv">PREV</label>
+						</li>
+					</ul>
+				</div> 
+				직접 넘기고싶은걸로 바꾸고싶으면 사용하자
+				-->
+				<div id="pop">
+					<div class="thumb"><a href="#"><img src="./img/popup.png" alt="팝업"></a></div>
+					<div class="chk">
+						<label>
+							<input type="checkbox" class="chk_bx">
+							<span>일주일 동안 보지않기</span>
+						</label>
+						<input type="button" value="닫기" class="btn_close">
+					</div>
+				</div>
+				<div class="owl-carousel owl-theme visual1">
+				    <div class="item">
+				    	<video class="video-fluid" autoplay loop muted>
+							<source src="./img/main1.mp4" type="video/mp4" />
+						</video>
+						<h1>FROM JEJU</h1>
+						<p>크래프트 맥주 불모지에서 최고의 글로벌 크래프트 맥주를.</p>
+					</div>
+				    <div class="item">
+				    	<video class="video-fluid" autoplay loop muted>
+							<source src="./img/main2.mp4" type="video/mp4" />
+						</video>
+						<h2>NEW BEER</h2>
+						<p class="subtit2">양조장, 놀이터이자 관광지, 문화발상지.</p>
+					</div>
+				    <div class="item">
+				    	<video class="video-fluid" autoplay loop muted>
+						    <source src="./img/main3.mp4" type="video/mp4" />
+						</video>
+						<h3>OUR MISSION</h3>
+						<p class="subtit3">한국 크래프트 맥주의 선구자로써 맥주미식문화를 창조.</p>
+					</div>
+				</div>
+			</div><!-- slider -->
+		</div>
+
+		<!-- ########################################################## -->
+		
+		<input type="checkbox" id="btn">
+		<aside class="menu">
+			<label for="btn"></label>
+			<div class="submenu"><a href="#"><b><U>menu</U></b></a></div>
+			<div class="submenu"><a href="./index.html"><b>index</b></a></div>
+			<div class="submenu"><a href="./brewery.html"><b>brewery</b></a></div>
+			<div class="submenu"><a href="./beer.html"><b>beer</b></a></div>
+			<div class="submenu"><a href="./tour.html"><b>tour</b></a></div>
+			<div class="submenu"><a href="./ourstory.html"><b>our story</b></a></div>
+			<div class="submenu"><a href="./contactus.html"><b>contact us</b></a></div>
+		</aside>
+		<label for="btn" class="button">
+				<i></i>
+				<i></i>
+				<i></i>
+		</label>
+		<label for="btn" class="modal"></label>
+
+		<input type="checkbox" id="btn2">
+		<div class="tourgogo">
+			<div class="tourinner">
+				<div class="tourheader">
+					<h3>양조장 투어 예약하기</h3>
+					<p class="headertit">제주의 깨끗한 바다를 바라보며 올레길을 경험하듯이,<br>
+					양조장에선 맥주가 완성되는 과정까지도 즐거운 여정이 될 것입니다.</p>
+					<p>양조장 투어는 사전예약제로 운영됩니다.<br>
+					운영시간 : 13:00~19:00 (목, 금, 토, 일 / <span>월,화,수 휴무</span>)<br>
+					주소 : 제주시 한림읍 금능농공길 62-11 <a href="./contactus.html">지도보기</a></p>
+					<a href="#" class="tourlist">양조장 투어 예약</a>
+					<a href="#" class="tourcheck">양조장 투어 예약 확인</a>
+				</div>
+				<div class="tourinfo">
+					<p class="infotit">양조장 투어 유의사항</p>
+					<p>방문 인원이 몰릴 경우, 여유로운 관람을 위해 펍을 먼저 이용하신 뒤 투어에 참여하실 수 있도록 권장해 드리고 있으며, 당일 예약은 불가합니다.</p>
+					<ul>
+						<li>이용 금액 : 12,000원 (미취학 아동 / 7세까지 무료)</li>
+						<li>양조장 평일 월,화,수 휴무</li>
+						<li>PUB 운영 20시 마감 (19시 투어시 참고)</li>
+						<li>반려동물 출입제한</li>
+						<li>이용일 기준 4~7일 전 환불 : 50% 수수료 발생 (날짜 변경 가능)</li>
+						<li>이용일 기준 1~3일내 환불 : 불가 (날짜 변경 가능)</li>
+						<li>당일 취소/환불/날짜 변경 : 모두 불가</li>
+						<li>기타 문의 : jejubeer@jejubeer.co.kr</li>
+						<li>단체 예약 문의 jejumkt@jejubeer.co.kr</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<label for="btn2" class="button2">
+			<i></i>
+			<i></i>
+			<i></i>
+		</label>
+	</div><!-- wrap -->
+	<div class="bottom"><p>제주패밀리 주식회사 / 서울시 중구 동호로 228 / 대표전화 02-2235-5559 / 사업자등록번호 782-81-00834 / 대표자 김상욱
+COPYRIGHT 2018 @ JEJU BEER COMPANY.</p></div>
+</body>
+</html>

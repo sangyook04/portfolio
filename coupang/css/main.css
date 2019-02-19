@@ -1,0 +1,415 @@
+﻿/*헤더부분*/
+
+#wrap {counter-reset: itemCount;}
+#wrap header {}
+#banner {overflow: hidden; position: relative; background-color: #38619d;}
+#banner a {display: block; overflow: hidden; margin: auto; width: 980px; height: 70px; transition: height 0.6s;}
+:checked~header #banner a {height: 0;}
+#wrap header #banner .bannerclose {position: absolute; right: 20px; top: 20px; width: 30px; height: 30px; background-image: url(../img/banner_close.png);background-position: -110px -31px; text-indent: -9999px;}
+/*여기까지 배너*/
+
+header .gnb {position: relative; color: #333; font-size: 11px; line-height: 32px; white-space: nowrap; background-color: #f0f0f0; z-index: 8;}
+header .gnb .good {}
+header .gnb .good li {float: left; margin-left: 10px;}
+header .gnb .good li a {position: relative;}
+header .gnb .good li .neww:after {content: ""; position: absolute; right: -12px; top: 3px; border-width: 4px 4px 0; border-top-color: #333;}
+header .gnb .good .newstore {display: none; position: absolute; top: 100%; left: 33px; padding: 20px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 5px rgba(0,0,0,0.25);}
+header .gnb .good .newstore a {display: block; font-size: 12px; line-height: 1;}
+header .gnb .good li:hover .newstore {display: block;}
+header .gnb .good .newstore a:hover {color: #4285f4; text-decoration: underline;}
+header .gnb .good .newstore a+a {margin-top: 12px;}
+
+header .gnb .login {}
+header .gnb .login li {float: right; margin-right: 10px;}
+header .gnb .login li a {}
+header .gnb .login li a:hover {}
+header .gnb .login .infocenter {display: none; position: absolute; top: 100%; right: -20px; padding: 20px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 5px rgba(0,0,0,0.25);}
+header .gnb .login li:hover .infocenter {display: block;}
+header .gnb .login .infocenter a {display: block; font-size: 12px; line-height: 2;}
+header .gnb .login .infocenter a:hover {color: #4285f4; text-decoration: underline;}
+/*여기까지가 gnb*/
+
+header .headerline {}
+header .headerline .cate {float: left; position: relative; z-index: 5;}
+header .headerline .cate:hover .cateDetail {display: block;}
+header .headerline .cate p {display: block; width: 110px; height: 115px; cursor: pointer; background-image: url(../img/bg_hd.png); background-position: 0 0; padding-top: 70px; text-align: center; color: #fff; font-size: 13px;}
+header .headerline .cate .cateDetail {display: none; position: absolute; top: 100%; left: 0; width: 165px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 5px rgba(0,0,0,0.25);}
+header .headerline .cate .cateDetail ul {padding: 8px 0 5px 0;}
+header .headerline .cate .cateDetail ul .cateItem1 {overflow: hidden; padding-left: 51px;     background-image: url(../img/cate.png); background-position-x: -8px;}
+header .headerline .cate .cateDetail ul .cateItem1>a {float: left; position: relative; color: #333; font-size: 12px; line-height: 29px;}
+header .headerline .cate .cateDetail ul .cateItem1:hover>a {color: #4285f4; font-weight: 700; text-decoration: underline;}
+header .headerline .cate .cateDetail ul .cateItem1:hover {background-position-x: -200px;}
+header .headerline .cate .cateDetail .newlogo:after {content: ""; position: absolute; top: 8px; left: 100%; margin-left: 4px; width: 12px; height: 12px; background-image: url(../img/ico_new.png); background-size: 12px;}
+header .headerline .cate .cateDetail .cate1 {position: relative;}
+header .headerline .cate .cateDetail .cate1 .cate1Detail {display: none; position: absolute; top: -1px; bottom: -1px; left: 100%; width: 592px; height: 594px; background-color: #fff; border: 1px solid #ddd; box-shadow: 2px 4px 5px rgba(0,0,0,0.3); background-image: none;}
+header .headerline .cate .cateDetail .cate1 .cate1Detail li {padding-left: 20px;}
+header .headerline .cate .cateDetail .cate1 .cate1Detail .cateItem2 {display: block; color: #333; font-size: 12px; line-height: 29px; }
+header .headerline .cate .cateDetail .cate1 .cate1Detail .cateItem2 a {}
+header .headerline .cate .cateDetail .cate1 .cate1Detail2 {display: none; position: absolute;top: -1px; bottom: -1px; left: 100%; margin-left: -433px; border-left: 1px solid #ddd;}
+header .headerline .cate .cateDetail .cate1 .cate1Detail li:hover>a {color: #4285f4; font-weight: 700; text-decoration: underline;}
+
+
+header .headerline .cate .cateDetail .cate1Detail .bgimg1 {position: absolute; top: 0; bottom: 0; right: 0; width: 433px; background-image: url(../img/cate_bg_01.jpg); background-position: 100% 100%;}
+header .headerline .cate .cateDetail .cate1Detail .bgimg1 a {position: absolute; top: 0; bottom: 0; right: 0; height: 100%; width: 100%;}
+ 
+header .headerline .cate .cateDetail .cateItem1:hover .cate1Detail {display: block;}
+header .headerline .cate .cateDetail .cateItem2:hover .cate1Detail2 {display: block;}
+
+header .headerline .cate .cateDetail .cate2 {border-top: 1px solid #ddd;}
+header .headerline .cate .cateDetail .cate3 {border-top: 1px solid #ddd;}
+/*여기까지가 카테고리*/
+
+header .headerline nav {float: left; margin: 28px 0 0 30px; width: 715px;}
+header .headerline nav h1 {display: inline-block;}
+header .headerline nav h1 a {display: inline-block; width: 174px; height: 41px; text-indent: -9999px;
+background-image: url(../img/logo_00.png); background-size: 100%;}
+header .headerline nav form {float: right; position: relative; width: 521px; height: 41px; border: 2px solid #4285f4;}
+header .headerline nav form .selectDetail {display: none; position: absolute; top: 100%; overflow: auto; background-color: #fff; width: 131px; height: 300px; box-shadow: 0 4px 5px rgba(0,0,0,0.25); z-index: 12;}
+
+header .headerline nav form .selectDetail ul {position: relative; padding: 10px 0 10px 13px; } 
+/*header .headerline nav form .selectDetail ul:after {content: ""; position: absolute; right:10px; top: 50%; margin-top: -2px; border-width: 5px 5px 0 5px; border-color: #999 }*/
+header .headerline nav form .selectDetail ul li {}
+header .headerline nav form .selectDetail ul li label {display: block; font-size: 12px; letter-spacing: -1px; line-height: 28px;}
+header .headerline nav form .selectDetail ul li label:hover {text-decoration: underline; color: #4285f4;}
+header .headerline nav .selectform {position: relative; float: left; width: 133px; height: 100%; border-right: 1px solid #ddd; font-size: 12px; line-height: 37px; color: #555; text-indent: 10px;}
+header .headerline nav .selectform:before {content: "선택";}
+header .headerline nav .selectform:after {content: ""; position: absolute; right: 10px; top: 50%; margin-top: -2px; border-width: 5px 5px 0 5px; border-color: #999 transparent;}
+#btnSelect:checked~.selectform:after {margin-top: -3px; border-width: 0 5px 5px 5px;}
+#btnSelect:checked~.selectDetail {display: block;}
+#selectall:checked~.selectform:before {content: "전체";}
+#selectseason:checked~.selectform:before {content: "시즌관";}
+#selectwoman:checked~.selectform:before {content: "여성패션";}
+#selectman:checked~.selectform:before {content: "남성패션";}
+#selectbaby:checked~.selectform:before {content: "베이비패션";}
+#selectgirl:checked~.selectform:before {content: "여아패션";}
+#selectboy:checked~.selectform:before {content: "남아패션";}
+#selectsports:checked~.selectform:before {content: "스포츠패션";}
+#selectshoes:checked~.selectform:before {content: "신발";}
+#selectbag:checked~.selectform:before {content: "가방";}
+#selectluxury:checked~.selectform:before {content: "명품패션";}
+#selectbeauty:checked~.selectform:before {content: "뷰티";}
+
+
+header .headerline nav [type=text] {float: left; width: 310px; height: 100%; padding-left: 10px;}
+
+header .headerline nav .mic {float: left; width: 23px; height: 100%;}
+header .headerline nav .mic i {display: block; margin-top: 7px; height: 24px; text-indent: -9999px; background-image: url(../img/mic.png); background-position-y: 0; background-size: 20px;}
+header .headerline nav #micBtn:checked+i {background-position-y: 100%;}
+header .headerline nav [type=submit] {float: left; width: 50px; height: 100%; text-indent: -9999px; background-image: url(../img/bg_hd.png); background-position: -112px -71px;}
+
+header .headerline nav .navbar {margin-top: 11px;}
+header .headerline nav .navbar ul {overflow: hidden;}
+header .headerline nav .navbar ul li {float: left;} 
+header .headerline nav .navbar ul li a {display: block; padding: 0 14px; color: #333; font-size: 12px;line-height: 32px;}
+header .headerline nav .navbar ul li.rocket {padding-left: 10px; background-image: url(../img/bg_hd.png); background-position: 0 -116px;}
+
+
+header .headerline .mycate {float: left;}
+header .headerline .mycate .mycoup {float: left; margin: 20px 0 0 22px; width: 50px; text-align: center;}
+header .headerline .mycate .mycoup a:before {content: ""; display: block; margin: 8px auto 4px; width: 30px; height: 29px; background-image: url(../img/bg_hd.png); background-position: -112px -42px;}
+header .headerline .mycate a span {color: #333; font-size: 12px;}
+
+header .headerline .mycate .mycart {float: left; position: relative; margin: 10px 0 0 22px; width: 50px; text-align: center; z-index: 6;}
+header .headerline .mycate .mycart {}
+header .headerline .mycate .mycart a {}
+header .headerline .mycate .mycart a span {color: #333; font-size: 12px; } 
+header .headerline .mycate .mycart>a:before {content: ""; display: block; margin: 10px auto 0px; width: 40px; height: 41px; background-image: url(../img/bg_hd.png); background-position: -112px 0px;}
+
+header .headerline .mycate .mycart .mycartDetailhover {display: block; width: 100%; height: 100%; padding-top: 20px;}
+header .headerline .mycate .mycart:hover .mycartDetail {display: block;}
+header .headerline .mycate .mycart .mycartDetail {display: none; position: absolute; top: 85%; right: 2px; width: 302px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 4px 5px rgba(0,0,0,0.25); z-index: 5;}
+header .headerline .mycate .mycart .mycartDetail ul {padding: 0 20px;}
+header .headerline .mycate .mycart .mycartDetail ul li {overflow: hidden; padding: 10px 0; counter-increment: itemCount;}
+header .headerline .mycate .mycart .mycartDetail ul li+li {border-top: 1px solid #ddd;}
+header .headerline .mycate .mycart .mycartDetail ul li a {display: block; text-align: left;}
+header .headerline .mycate .mycart .mycartDetail ul li a img {float: left; width: 72px; height: 72px;}
+header .headerline .mycate .mycart .mycartDetail ul li a span {font-size: 12px; margin-left: 10px; position: relative; top: 25px;}
+header .headerline .mycate .mycart .mycartDetail ul li a:hover span {color: #4285f4; text-decoration: underline;}
+header .headerline .mycate .mycart .mycartDetail .cartgogo {display: block; position: relative; color: #333; font-size: 12px; text-align: center; line-height: 60px; border-top: 1px solid #ddd; background-color: #fafafa;}
+header .headerline .mycate .mycart .mycartDetail .cartgogo:hover {color: #4285f4;text-decoration: underline;}
+header .headerline .mycate .mycart .mycartDetail:before {content: ""; position: absolute; top: -6px; right: 40px; width: 10px; height: 10px; border-width: 1px 1px 0 0; border-color: #ddd; background-color: #fff; transform: rotate(-45deg);}
+header .headerline .mycate .mycart .itemLength {position: absolute; top: 13px; right: 15px; color: #fff; font-family: tahoma; font-size: 10px; font-weight: bold;}
+header .headerline .mycate .mycart .itemLength:after {content: counter(itemCount);}
+/*여기까지가 헤더라인*/
+
+
+footer {margin-top: 50px;}
+footer nav {border-top: 2px solid #ddd; border-bottom: 1px solid #ddd; text-align: center}
+footer nav ul {}
+footer nav ul li {display: inline-block;}
+footer nav ul li+li:before {content: "|";} 
+footer nav ul li a {padding: 0 30px; line-height: 50px; font-size: 12px;}
+
+footer .footerWrap {overflow: hidden; padding: 30px 0; font-size: 12px; line-height: 1.5; border-bottom: 1px solid #ddd;}
+footer .footerWrap h3 {float: left; margin: 0 20px 0 10px; width: 117px; height: 34px; background-image: url(../img/bg_ft.png); background-position: -20px -36px; text-indent: -9999px;}
+footer .footerWrap a {text-decoration: underline; margin-top: 2px;}
+footer .footerWrap address {float: left; width: 260px;}
+footer .footerWrap address span {}
+footer .footerWrap address a {}
+footer .footerWrap .fax {float: left; width: 340px;}
+footer .footerWrap .fax span {}
+footer .footerWrap .fax strong {font-size: 24px; font-family: Tahoma;}
+footer .footerWrap .bank {float: left; width: 270px;}
+footer .footerWrap .bank span {}
+footer .footerWrap .bank p {font-size: 11px; margin-top: 2px; line-height: 1.8;}
+footer .footerWrap .bank a {}
+
+footer .award {overflow: hidden; padding: 15px 40px;}
+footer .award li {float: left; background-image: url(../img/bg_ft.png); background-position-y: -107px;}
+footer .award li+li {margin-left: 32px;}
+footer .award li a {display: block; width: 188px; height: 50px; text-indent: -9999px;}
+
+footer .footerblack {background-color: #333; height: 80px; position: relative;}
+footer .footerblack p {font-size: 11px; color: #888; padding: 21px 0 3px 0;}
+footer .footerblack .sns {overflow: hidden; position: absolute; top: 27%; right: 10px;}
+footer .footerblack .sns a {float: left; background-image: url(../img/bg_ft.png); background-position-y: -30px; height: 34px; width: 34px; display: block; margin-left: 5px; text-indent: -9999px;}
+
+/*여기까지가 footer*/
+
+
+#slider {position: relative; height: 450px; text-indent: -9999px;}
+#slider .btnslider {position: absolute; left: 50%; margin-left: 320px; width: 176px; height: 56px; border: 1px solid #fff; z-index: 2;}
+#slider .btnslider:hover {border: 2px solid #4285f4;}
+#slider li {display: none; height: 450px;}
+
+
+#slider .btnslider:nth-of-type(1):hover~ul li:nth-child(1),
+#slider .btnslider:nth-of-type(2):hover~ul li:nth-child(2),
+#slider .btnslider:nth-of-type(3):hover~ul li:nth-child(3),
+#slider .btnslider:nth-of-type(4):hover~ul li:nth-child(4),
+#slider .btnslider:nth-of-type(5):hover~ul li:nth-child(5),
+#slider .btnslider:nth-of-type(6):hover~ul li:nth-child(6), 
+#slider .btnslider:not(:hover)~ul li:nth-child(1) {display: block; z-index: 1; position: absolute; top: 0; left: 0; right: 0;}
+
+/*여기까지가 슬라이더*/
+
+#container .today {padding: 40px 40px 0 0;}
+#container .today h4 {width: 355px; height: 33px; background-image: url(../img/bg_01.png); background-position: 0 -65px; text-indent: -9999px; margin-bottom: 15px;}
+#container .today .todayframe {overflow: hidden; padding: 7px; border: 1px solid #ddd; margin-bottom: 40px;}
+#container .today .todayframe a {position: relative; margin: 6px; text-indent: -9999px;}
+#container .today .todayframe a:after {content: ""; position: absolute; bottom: 20px; left: 20px; width: 40px; height: 40px; background-image: url(../img/bg_01.png); background-position: -515px -236px;}
+#container .today .todayframe a:hover:after {width: 100px; background-position-x: -563px;}
+#container .today .todayframe .wide {float: left; width: 470px; height: 299px; border: 1px solid #ddd;}
+#container .today .todayframe .nowide {float: left; width: 229px; height: 299px; border: 1px solid #ddd;}
+#container .today .todayframe a:hover {border-color: #0085da;}
+
+/*여기까지가 오늘의 발견*/
+
+#container .cartrel {position: relative;}
+#container .cartrel h4 {width: 187px; height: 33px; background-image: url(../img/bg_01.png); background-position: -396px -570px; text-indent: -9999px; margin-bottom: 15px;}
+
+#container .cartrel ul {overflow: hidden; margin-bottom: 40px;}
+#container .cartrel ul .page1 {}
+#container .cartrel ul .page2 {}
+#container .cartrel ul .page3 {}
+#container .cartrel ul li {display: none; float: left; width: 188px; border: 1px solid #ddd;}
+#container .cartrel ul li:not(:nth-child(5n+1)) {margin-left: 10px;}
+#container .cartrel ul li a {display: block; position: relative; height: 286px;}
+#container .cartrel ul li:hover {border-color: #0085da;}
+#container .cartrel ul li a .thumb {display: block; width: 186px; height: 186px;}
+#container .cartrel ul li a .thumbinfo {display: block; padding: 15px 12px; height: 100px;}
+#container .cartrel ul li a .info {font-size: 12px;}
+#container .cartrel ul li a .price {display: block; font-size: 14px; margin-top: 5px;}
+
+.cartrel .controlBtn {position: absolute; right: 40px; bottom: 84%; margin-bottom: 17px; width: 104px; text-align: center;}
+.cartrel .controlBtn .pageView {line-height: 28px;}
+.cartrel .controlBtn label {display: none; position: absolute; top: 0; width: 28px; height: 28px; text-indent: -9999px; background-image: url(../img/bg_01.png); background-position-y: -513px;}
+.cartrel .controlBtn label:first-of-type,
+.cartrel .controlBtn label:last-of-type {background-position-y: -552px;}
+.cartrel .controlBtn label.prev {left: 0; background-position-x: 0px;}
+.cartrel .controlBtn label.next {right: 0; background-position-x: -76px;}
+
+.cartrel #cartPage1:checked~ul li.page1,
+.cartrel #cartPage2:checked~ul li.page2,
+.cartrel #cartPage3:checked~ul li.page3 {display: block;}
+.cartrel #cartPage1:checked~.controlBtn .pageView:before {content: "1";}
+.cartrel #cartPage2:checked~.controlBtn .pageView:before {content: "2";}
+.cartrel #cartPage3:checked~.controlBtn .pageView:before {content: "3";}
+.cartrel #cartPage1:checked~.controlBtn .page1,
+.cartrel #cartPage2:checked~.controlBtn .page2,
+.cartrel #cartPage3:checked~.controlBtn .page3 {display: block;}
+
+/*여기까지가 장바구니 연관상품*/
+
+#container .recent {padding: 40px 40px 0 0;}
+#container .recent h4 {height: 25px; background-image: url(../img/bg_02.png); background-position: 0 0; text-indent: -9999px; margin-bottom: 15px;}
+#container .recent .recentfrm {overflow: hidden;}
+#container .recent .recentfrm .recentBtn {float: left; width: 245px; height: 107px; padding: 20px; border-width: 1px 1px 0; border-color: #ddd;}
+#container .recent .recentBtn img {float: left; width: 66px; height: 66px; margin-right: 5px;}
+#container .recent .recentfrm .recentBtn span {display: block; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#container .recent .recentfrm .recentBtn span:nth-child(2) {margin-top: 3px;}
+#container .recent .recentfrm .recentBtn span:nth-child(3) {margin: 4px 0 6px;}
+
+
+#container .recent .recentfrm .cntArea {float: left; position: relative; width: 245px;}
+
+#container .recent .recentfrm .recentinner {display: none; float: left; padding: 0 29px; width: 980px; height: 297px; border-width: 0 1px 1px; border-color: #0085da;}
+#container .recent .recentfrm .recentinner h5 {height: 39px; text-indent: -9999px; background-image: url(../img/bg_02.png); background-position: 0 -35px;}
+#container .recent .recentfrm .recentinner ul {overflow: hidden;}
+#container .recent .recentfrm .recentinner ul li {float: left;}
+#container .recent .recentfrm .recentinner ul li+li {margin-left: 22px;}
+#container .recent .recentfrm .recentinner ul li a {}
+#container .recent .recentfrm .recentinner ul li a img {width: 166px; height: 166px;}
+#container .recent .recentfrm .recentinner ul li a img:hover {border: 1px solid #0085da;}
+#container .recent .recentfrm .recentinner ul li a .productname {display: block; padding-top: 12px; font-size: 11px;}
+#container .recent .recentfrm .recentinner ul li a .won {display: block; padding-top: 8px; font-size: 14px; font-weight: bold;}
+#container .recent .recentfrm .recentinner:nth-of-type(2) {border: 2px solid blue;}
+
+#container .recent .recentfrm .cntArea *:checked~.recentinner {display: block;}
+#container .recent .recentfrm .cntArea *:not(:checked)~.recentBtn {border-bottom: 1px solid #0085da;}
+#container .recent .recentfrm .cntArea :checked~.recentBtn,
+#container .recent .recentfrm .cntArea .recentBtn:hover {border-color: #0085da; z-index: 1;}
+
+#recentinner2 {position: relative; left: -100%; top: 0;}
+#recentinner3 {position: relative; left: -200%; top: 0;}
+#recentinner4 {position: relative; left: -300%; top: 0;}
+/*최근본상품 여기까지*/
+
+
+#container .category {margin-top: 50px;}
+#container .category h4 {width: 230px; height: 52px; background-image: url(../img/hot_trend.png); background-position: 0 0; text-indent: -9999px; margin-bottom: 15px;}
+#container .category .categoryinner {position: relative; width: 1020px; height: 603px; border-top: 2px solid #f6699e; border-bottom: 1px solid #ddd; overflow: hidden; margin-bottom: 30px;}
+#container .category .categoryinner.man {border-top-color: #1992df;}
+#container .category .categoryinner aside {float: left; position: relative; padding: 40px 0 0 22px; width: 145px; height: 600px; border-right: 1px solid #ddd;}
+#container .category .categoryinner aside img {width: 114px; margin-bottom: 7px;}
+#container .category .categoryinner aside .barobaro {color: #888; font-size: 11px;}
+#container .category .categoryinner aside h6 {margin-bottom: 10px; font-size: 16px; font-weight: 700;}
+#container .category .categoryinner aside .hotkeyword {position: absolute; bottom: 3%;}
+#container .category .categoryinner aside .hotkeyword ul li {}
+#container .category .categoryinner aside .hotkeyword ul li a {float: left; clear: both; padding: 0 10px; color: #999; font-size: 12px; line-height: 28px; border: 1px solid #ddd;}
+#container .category .categoryinner aside .hotkeyword ul li a {margin-top: 8px;}
+#container .category .categoryinner aside .hotkeyword ul li a:hover{background-color: #f6699e; color: #fff;}
+#container .category .categoryinner aside .hotkeyword ul li a:before {content: "#"; margin-right: 2px;}
+#container .category .categoryinner aside .hotkeyword ul li .mana:hover {background-color: #1992df;}
+/*인기상품 어사이드 여기까지*/
+#container .category .categoryinner .imgside {float: left; display: block; width: 325px; height: 600px;}
+#container .category .categoryinner .imgside ul {position: relative;}
+#container .category .categoryinner .imgside ul li {position: absolute; top: 0; left: 0; z-index: 1; animation: imgside 12s infinite;}
+#container .category .categoryinner .imgside ul li a {display: block;}
+#container .category .categoryinner .imgside ul li a img {}
+#container .category .categoryinner .imgside ul li a .imgsideinfo {position: absolute;bottom: 50px; left: 22px; right: 22px; padding: 20px 22px; color: #fff; text-align: center; background-color: #f6699e;}
+#container .category .categoryinner .imgside ul li a .imgsideinfo strong {display: block;}
+#container .category .categoryinner .imgside ul li a .imgsideinfo span {display: block; padding-top: 10px;}
+#container .category .categoryinner .imgside ul li a .imgsideinfo.man {background-color: #1992df;}
+
+
+#container .category .categoryinner .adPointer {position: absolute; bottom: 10px; left: -40%; z-index: 5; right: 0; text-align: center;}
+#container .category .categoryinner .adPointer i {display: inline-block; width: 10px; height: 10px; background-color: gray; border-radius: 5px; opacity: 0.25; animation: adPointer 12s infinite;}
+#container .category .categoryinner .adPointer i+i {margin-left: 5px;}
+/*인기상품 이미지 여기까지*/
+
+#container .category .categoryinner .cateslider {float: left; position: relative; width: 550px; height: 600px;}
+#container .category .categoryinner .cateslider ul {overflow: hidden;}
+#container .category .categoryinner .cateslider ul li {float: left; padding: 22px 8px 0 15px; width: 183px;}
+#container .category .categoryinner .cateslider ul li a {}
+#container .category .categoryinner .cateslider ul li a .thumb {display: block; }
+#container .category .categoryinner .cateslider ul li a .thumb img {}
+#container .category .categoryinner .cateslider ul li a .info {display: block; padding-top: 6px; height: 110px;}
+#container .category .categoryinner .cateslider ul li a .info .tit {display: block; font-size: 11px; line-height: 14px;}
+#container .category .categoryinner .cateslider ul li a .info .price {display: block; margin-top: 8px; font-size: 14px;}
+#container .category .categoryinner .cateslider .shopList {position: absolute;}
+#container .category .categoryinner .cateslider .shopList label {display: none; position: absolute; top: 50%; margin-top: -33px; width: 30px; height: 50px; text-indent: -9999px; background-image: url(../img/bg_03.png); background-position-y: -13px;}
+#container .category .categoryinner .cateslider:hover .shopList label {display: block;}
+#container .category .categoryinner .cateslider .shopList label.prev {left: 0; background-position-x: 0;}
+#container .category .categoryinner .cateslider .shopList label.next {right: 0; background-position-x: -50px;}
+#container .category .categoryinner .cateslider nav {overflow: hidden; position: absolute; z-index: 2; bottom: 10px; left: 50%; margin-left: -45px;}
+#container .category .categoryinner .cateslider nav label {float: left; width: 10px; height: 10px; background-color: gray; border-radius: 5px; opacity: 0.25;}
+#container .category .categoryinner .cateslider nav label+label {margin-left: 10px;}
+
+#container .category .categoryinner .cateslider :nth-child(1):checked~.shopList:nth-of-type(1),
+#container .category .categoryinner .cateslider :nth-child(2):checked~.shopList:nth-of-type(2),
+#container .category .categoryinner .cateslider :nth-child(3):checked~.shopList:nth-of-type(3) {z-index: 1;}
+#container .category .categoryinner .cateslider :nth-child(1):checked~nav label:nth-child(1),
+#container .category .categoryinner .cateslider :nth-child(2):checked~nav label:nth-child(2),
+#container .category .categoryinner .cateslider :nth-child(3):checked~nav label:nth-child(3) {opacity: 1;}
+
+#container .asidebar {position: absolute; z-index: 1; top: 88px; left: 100%; margin-left: -10px; width: 102px;}
+#container .asidebar .banner {display: block; width: 102px; height: 150px; text-indent: -9999px; background-image: url(../img/ad.jpg);}
+#container .asidebar .util {margin-top: 10px;}
+#container .asidebar .util a.asideBtn {display: block; position: relative; height: 33px; text-indent: -9999px; background-image: url(../img/bg_04.png); background-position-x: -31px;}
+#container .asidebar .util>div:after {position: absolute; top: 10px; right: 7px; color: #3abbff; font-family: Arial; font-size: 12px; font-weight: bold; text-indent: 0;}
+#container .asidebar .util .cart {position: relative;}
+#container .asidebar .util .cart:after {content: counter(itemCount);}
+#container .asidebar .util .cart a {background-position-y: 0;}
+#container .asidebar .util .cart a:hover {background-position-y: -33px;}
+#container .asidebar .util .recent {position: relative; counter-reset: recentList; padding: 0;}
+#container .asidebar .util .recent:after {content: counter(recentList);}
+#container .asidebar .util .recent a {background-position-y: -66px;}
+
+.recentDetail {border-width: 0 1px 1px; border-color: #ddd; counter-reset: pageCount;}
+	.recentDetail ul {padding: 2px 0 8px; width: 100%; height: 338px;}
+	.recentDetail ul li {overflow: hidden; float: right; position: relative; margin: 0 13px 0 0; height: 0; counter-increment: recentList;}
+	.recentDetail ul li:nth-child(4n+1) {counter-increment: recentList pageCount;}
+	.recentDetail ul li a {overflow: hidden; position: relative; display: block; width: 74px;}
+	.recentDetail ul li:hover a {width: 219px;}
+	.recentDetail ul li:hover a:before {content: ""; position: absolute; top: 0; bottom: 0; left: 0; right: 0; border: 2px solid #333;}
+	.recentDetail ul li a .info {display: none; float: left; padding: 20px 10px; width: 145px; height: 74px; background-color: #f1f1f1;}
+	.recentDetail ul li:hover a .info {display: block;}
+	.recentDetail ul li a .info .prodName {display: block; color: #555; font-size: 11px;}
+	.recentDetail ul li a .info .price {display: block; margin-top: 6px; color: #0096e4; font-size: 15px;}
+	.recentDetail ul li a .info .price:after {content: " 원"; font-size: 12px;}
+	.recentDetail ul li a .thumb {float: left; width: 74px; height: 74px; background-size: 100%;}
+	.recentDetail ul li .btnClose {display: none; position: absolute; top: 0; right: 0; width: 13px; height: 13px; text-indent: -9999px; background-image: url(../img/bg_04.png); background-position: 0 -32px;}
+	.recentDetail ul li:hover .btnClose {display: block;}
+	.recentDetail .controlArea {overflow: hidden; padding: 0 15px 14px;}
+	.recentDetail .controlArea .pageView {float: left; margin-top: 2px; color: #555; font-size: 11px;}
+	.recentDetail .controlArea .pageView:before {color: #0085da; font-weight: bold;}
+	.recentDetail .controlArea .pageView:after {content: counter(pageCount);}
+	.recentDetail .controlArea .pageArrow {float: right;}
+	.recentDetail .controlArea .pageArrow label {display: none; float: left; width: 16px; height: 16px; text-indent: -9999px; background-image: url(../img/bg_04.png); background-position-y: 0;}
+	.recentDetail .controlArea .pageArrow label.prev {background-position-x: 0px;}
+	.recentDetail .controlArea .pageArrow label.next {background-position-x: -15px;}
+
+	#page1:checked~ul li.page1,
+	#page2:checked~ul li.page2,
+	#page3:checked~ul li.page3 {margin-top: 8px; height: 74px;}
+	#page1:checked~.controlArea .pageView:before {content: "1";}
+	#page2:checked~.controlArea .pageView:before {content: "2";}
+	#page3:checked~.controlArea .pageView:before {content: "3";}
+	#page1:checked~.controlArea .pageArrow .page1,
+	#page2:checked~.controlArea .pageArrow .page2,
+	#page3:checked~.controlArea .pageArrow .page3 {display: block;}
+
+.trendBar {position: fixed; z-index: 11; border: 1px solid #ddd; top: 112px; left: 50%; margin-left: -556px; background-color: #fff; transition: top 0.6s;}
+.trendBar .barBtnWrap {}
+.trendBar .barBtnWrap li {width: 34px;}
+.trendBar .barBtnWrap li a {overflow: hidden; display: block; position: relative; width: 34px; color: #fff; font-size: 12px; line-height: 34px; text-indent: 44px; white-space: nowrap;}
+.trendBar .barBtnWrap li:not(:hover) a {background-color: #fff !important;}
+.trendBar .barBtnWrap li a:before {content: ""; position: absolute; top: 0; left: 0; width: 34px; height: 34px; background-image: url(../img/hot_nav.png); background-position-x: -1px; background-position-y: inherit;}
+.trendBar .barBtnWrap li:hover a:before {background-position-x: -51px;}
+.trendBar .barBtnWrap li:hover a {width: 154px;}
+.trendBar .barBtnSet {border-top: 1px solid #ddd;}
+.trendBar .barBtnSet .btnSet {display: block; height: 54px; text-indent: -9999px; background-image: url(../img/bg_03.png); background-position: 0 -265px;} /*label*/
+.trendBar .barBtnSet .setDetail {position: absolute; left: 100%; top: -1px; margin-left: 10px; width: 302px; background-color: #fff; border: 1px solid #ddd;}
+.trendBar .barBtnSet .setDetail:before {content: ""; position: absolute; left: -7px; top: 646px; width: 7px; height: 14px; background: url(../img/bg_03.png) -93px -63px no-repeat;}
+.trendBar .barBtnSet .setDetail .detailTop {overflow: hidden; border-bottom: 1px solid #ddd;}
+.trendBar .barBtnSet .setDetail .detailTop .topDesc {float: left; padding: 17px 0 0 20px; width: 238px; height: 62px;}
+.trendBar .barBtnSet .setDetail .detailTop .topDesc strong {display: block; color: #333; font-size: 12px;}
+.trendBar .barBtnSet .setDetail .detailTop .topDesc span {display: block; margin-top: 4px; color: #888; font-size: 11px;}
+.trendBar .barBtnSet .setDetail .detailTop [type=reset] {float: right; width: 62px; line-height: 62px; text-align: center; color: #555; font-size: 12px; background-color: #fafafa;}
+.trendBar .barBtnSet .setDetail .detailList {}
+.trendBar .barBtnSet .setDetail .detailList label {overflow: hidden; display: block; position: relative; margin: 0 20px; color: #333; font-size: 12px; line-height: 38px; border-bottom: 1px solid #ddd; background-image: url(../img/bg_03.png); background-position: 226px -65px;}
+.trendBar .barBtnSet .setDetail .detailList label input {display: block; float: left; margin: 13px 0 0 20px; width: 13px; height: 13px;}
+.trendBar .barBtnSet .setDetail .detailList label span {float: left; position: relative; padding-left: 42px; opacity: 0.5;}
+.trendBar .barBtnSet .setDetail .detailList label :checked+span {opacity: 1;}
+.trendBar .barBtnSet .setDetail .detailList label span:before {content: ""; position: absolute; top: 0; left: 0; width: 42px; height: 38px; background-image: url(../img/hot_nav.png); background-position-x: 10px; background-position-y: inherit;}
+.trendBar .barBtnSet .setDetail .detailBtnArea {overflow: hidden; margin-top: -1px; border-top: 1px solid #eee;}
+.trendBar .barBtnSet .setDetail .detailBtnArea label {float: left; position: relative; width: 50%; font-size: 12px; line-height: 50px; text-align: center; background-color: #fafafa;}
+.trendBar .barBtnSet .setDetail .detailBtnArea label[for=setBtn] {color: #555;}
+.trendBar .barBtnSet .setDetail .detailBtnArea label[for=barSubmit] {color: #0085da;}
+.trendBar .barBtnSet .setDetail .detailBtnArea label[for=barSubmit]:before {content: ""; position: absolute; top: 15px; left: 0; width: 1px; height: 20px; background-color: #ddd;}
+:checked~#container #trend .trendBar {top: 42px;}
+
+@keyframes imgside {
+   0% {z-index: 3;}
+   16.6665% {z-index: 3;}
+   16.6666% {z-index: 1;}
+   100% {z-index: 1;}
+}
+
+@keyframes adPointer {
+   0% {opacity: 1;}
+   16.6665% {opacity: 1;}
+   16.6666% {opacity: 0.25;}
+   100% {opacity: 0.25;}
+}

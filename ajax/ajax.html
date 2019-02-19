@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<input type="button" value="확인">
+	</div>
+</body>
+<script type="text/javascript">
+	
+	/*
+		1. ajax
+		- 비동기 처리기법으로 페이지를 로딩하는 기법
+		- 전체 페이지를 새로 고치지 않고도 페이지의 일부만을 위한 데이터를 로드하는 기법
+
+		※ 비동기(async)방식이란?
+		비동기 방식은 웹페이지를 리로드하지 않고 데이터를 불러오는 방식입니다. 이 방식의 장점은 페이지 리로드의 경우 전체 리소스를 다시 불러와야하는데 이미지, 스크립트 , 기타 코드등을 모두 재요청할 경우 불필요한 리소스 낭비가 발생하게 되지만 비동기식 방식을 이용할 경우 필요한 부분만 불러와 사용할 수 있으므로 매우 큰 장점이 있습니다.
+
+		※ Ajax의 장점
+		- 웹페이지의 속도향상
+		- 서버의 처리가 완료 될때까지 기다리지 않고 처리 가능하다.
+		- 서버에서 Data만 전송해면 되므로 전체적인 코딩의 양이 줄어든다.
+		- 좀더 다양한 UI를 가능하게 해준다.
+
+		2. json
+		- Javascript에서 객체를 만들 때 사용하는 표현식을 사용한다.
+		- JSON 표현식은 사람과 기계 모두 이해하기 쉬우며 용량이 작아서, 데이터 전송 등에 많이 사용한다.
+		- 특정 언어에 종속되지 않으며, 대부분의 프로그래밍 언어에서 JSON 포맷의 데이터를 핸들링 할 수 있는 라이브러리를 제공한다.
+	*/
+	
+
+	$.ajax({
+			url : './data/data.json',
+			success : function(data){
+				console.log(data);
+			},
+			error : function(err){ 
+				console.log('에러');
+			}
+	});
+	//ajax 기본 모양
+
+
+	var idx = 0;
+
+	function dataload(){
+
+		$.ajax({
+
+			type : 'get', // 파일을 받아오는 방식 (안적어줘도됨)
+			// get (기본값)
+			// - url에 ?뒤로 parameter를 전달하여 처리페이지로 값을 넘겨주는 방식
+			// - 속도는 빠르나 보안에 취약
+			// post
+			// - 서버에 값을 저장하고 처리페이지에서 값을 받아오는 방식
+			// - get방식보다 보안은 우수하나 속도는 다소 느림
+			url : './data/test.json', //호출 URL. GET 방식일경우 URL 뒤에 파라미터를 붙여서 사용 (당연히 적어야함)
+			dataType: 'json', // Ajax를 통해 호출한 페이지의 Return 형식이다. 형식에 따라 xml, json, html, text 등을 사용 (안적어줘도됨)
+			success : function(data){ //성공했을때의 처리 부분 (success와 error는 꼭 적어줘야함 error안날 자신있으면 error는 안적어도됨)
+
+				console.log(data);
+			},
+			error : function(err){ //에러났을때의 처리 부분
+				
+				console.log(err);
+			}
+		});
+	}
+
+	var idx = 0;
+
+	$('input').on('click', function(){
+
+		dataload();
+	});	
+	
+</script>
+</html>

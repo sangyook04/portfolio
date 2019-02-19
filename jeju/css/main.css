@@ -1,0 +1,321 @@
+	.wrap {position: relative;}
+	#pop {z-index: 100; float: left; display: none; position: fixed; top: 200px; right: 300px; padding: 10px; width: 400px; height: 450px; border: 1px solid #fff; background-color: #fff;}
+    #pop .thumb {margin-bottom: 10px; height: 400px;}
+    #pop .thumb a {}
+    #pop .thumb a img {height: 400px; width: 380px;}
+    #pop .chk {position: relative;}
+    #pop .chk label {padding-bottom: 10px;}
+    #pop .chk label .chk_bx {}
+    #pop .chk label span {position: relative; top: -3px; font-size: 13px; }
+    #pop .chk .btn_close {position: absolute; right: 10px;}
+
+
+/*메뉴 취소부분*/
+	.modal {display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 350px;}
+	#btn:checked~.modal {display: block;}
+
+	/*양조장투어 메뉴판 부분*/
+	
+	.wrap .tourgogo {position: fixed; text-align: center; top: 0; bottom: 0; left: -800px; width: 800px; background-color: #fff; transition: left 0.4s; font-family: Montserrat,나눔고딕,NanumGothic,돋움,Dotum,sans-serif;}
+	.wrap #btn2:checked~.tourgogo {left: 0; z-index: 4;}
+	.wrap .tourgogo .tourinner {text-align: center; border: 2px solid #3bc1cd; height: 100%; padding: 60px 0 60px 0;}
+	.wrap .tourgogo .tourinner .tourheader {margin-bottom: 50px; border-bottom: 1px solid #eee; padding-bottom: 50px;}
+	.wrap .tourgogo .tourinner .tourheader h3 {color: #000000; font-size: 20px; font-weight: 600; margin-bottom: 15px; margin-top: 50px;}
+	.wrap .tourgogo .tourinner .tourheader p {color: #333333; letter-spacing: -0.02em; line-height: 1.5em; margin-top: 12px; margin-bottom: 30px;}
+	.wrap .tourgogo .tourinner .tourheader .headertit:after {background: #dedede; content: ""; display: block; height: 1px; margin: 30px auto; width: 32px;}
+	.wrap .tourgogo .tourinner .tourheader p span {color: #3bc1cd;}
+	.wrap .tourgogo .tourinner .tourheader a {height: 42px; line-height: 42px;padding-left: 10px; padding-right: 10px; background: #ffffff; border: 1px solid #e4e4e4; color: #333333; display: inline-block; margin-left: 3px;
+    height: 24px; line-height: 24px; text-decoration: none;}
+	.wrap .tourgogo .tourinner .tourheader .tourlist {width: 200px; height: 42px; line-height: 42px; display: inline-block; padding-left: 10px; padding-right: 10px; background: #3bc1cd; border: 1px solid #3bc1cd; color: #ffffff; font-weight: 700;}
+	.wrap .tourgogo .tourinner .tourheader .tourcheck {width: 200px; height: 42px; line-height: 42px; display: inline-block; padding-left: 10px; padding-right: 10px; background: #3bc1cd; border: 1px solid #3bc1cd; color: #ffffff; font-weight: 700;}
+
+	.wrap .tourgogo .tourinner .tourinfo {text-align: left; padding: 0 180px 50px 180px;}
+	.wrap .tourgogo .tourinner .tourinfo .infotit {font-size: 14px; font-weight: bold; margin-top: 30px;}
+	.wrap .tourgogo .tourinner .tourinfo p {font-size: 14px;}
+	.wrap .tourgogo .tourinner .tourinfo ul {padding-left: 20px;}
+	.wrap .tourgogo .tourinner .tourinfo li {font-size: 14px; list-style: square;}
+
+	.wrap .button2 {display: block; position: absolute; top: 0; left: 0; height: 70px; width: 50px; border-right: 2px solid #ddd; border-bottom: 2px solid #ddd; color: black; text-align: center; line-height: 30px; cursor: pointer; border-radius: 2px; font-size: 12px; transition: margin-left; transition-duration: 0.4s; background-color: #fff; border-color: #ddd;}
+	.wrap .button2 i {position: absolute; left: 50%; width: 20px; margin: -1px 0 0 -10px; height: 3px; background-color: #474747;}
+	.wrap #btn2:not(:checked)~.button i {transition: top 0.4s 0.4s, transform 0.4s 0s, opacity 0s 0.4s;}
+	.wrap :checked~.button2 i {transition: top 0.4s 0s, transform 0.4s 0.4s, opacity 0s 0.4s;}
+	.wrap .button2 i:nth-child(1) {top: 20%;}
+	.wrap .button2 i:nth-child(2) {top: 50%;}
+	.wrap .button2 i:nth-child(3) {top: 80%;}
+	.wrap #btn2:checked~.button2 i {top: 50%;}
+	.wrap #btn2:checked~.button2 i:nth-child(1) {transform: rotate(45deg);}
+	.wrap #btn2:checked~.button2 i:nth-child(2) {opacity: 0;}
+	.wrap #btn2:checked~.button2 i:nth-child(3) {transform: rotate(-45deg);}
+	.wrap #btn2:checked~.button2 {margin-left: 800px;}
+
+
+
+
+
+	/*메뉴판 부분*/
+	.wrap aside {position: fixed; top: 0; bottom: 0; right: -300px; width: 300px; background-color: #42c3ce; transition: right 0.4s; z-index: 5;}
+	.wrap #btn:checked~aside {right: 0;}
+
+	/*메뉴판 버튼 부분*/
+	.wrap .button {display: block; position: fixed; top: 0; right: 0; height: 100%; width: 50px; border-left: 2px solid #ddd; color: white; text-align: center; line-height: 30px; cursor: pointer; border-radius: 4px; font-size: 12px; transition: margin-right 0.4s 0s; background-color: #fff; z-index: 5;}
+	.wrap .button i {position: absolute; left: 50%; width: 20px; margin: -1px 0 0 -10px; height: 2px; background-color: #474747;}
+	.wrap #btn:not(:checked)~.button i {transition: top 0.4s 0.4s, transform 0.4s 0s, opacity 0s 0.4s;}
+	.wrap :checked~.button i {transition: top 0.4s 0s, transform 0.4s 0.4s, opacity 0s 0.4s;}
+	.wrap .button i:nth-child(1) {top: 48%;}
+	.wrap .button i:nth-child(2) {top: 50%;}
+	.wrap .button i:nth-child(3) {top: 52%;}
+	.wrap #btn:checked~.button i {top: 50%;}
+	.wrap #btn:checked~.button i:nth-child(1) {transform: rotate(45deg);}
+	.wrap #btn:checked~.button i:nth-child(2) {opacity: 0;}
+	.wrap #btn:checked~.button i:nth-child(3) {transform: rotate(-45deg);}
+	.wrap #btn:checked~.button {margin-right: 300px;}
+	
+	/*메뉴판 안 글자 부분*/
+	.wrap .menu {text-align: center; font-size: 40px; font-family: 'Oswald', sans-serif; text-transform: uppercase;}
+	.submenu {margin-top: 40px;}
+	.wrap .menu .submenu:nth-child(2) {font-size: 70px;}
+	.wrap .menu .submenu:nth-child(3) {margin-top: 80px;}
+	.wrap .menu:after {content: "_____"; color: white;}
+	.wrap .menu .submenu a {text-decoration: none; color: white;}
+
+	/*상단 로고 부분*/
+	.mainlogo {position: relative; text-align: center; height: 70px; border-bottom: 1px solid #ddd;}
+
+	.mainlogo .left {position: absolute; top: 24px; left: 40px; display: inline-block; margin: 0 auto; width: 0; height: 0; border-right: 10px solid transparent; border-bottom: 10px solid #3bc1cd; border-top: 10px solid #3bc1cd; background-color: #fff;  z-index: 1;}
+	.mainlogo span {position: absolute; top: 17px; left: 20px; display: inline-block; font-weight: bold; color: #fff; background-color: #3bc1cd; width: 135px; height: 35px; border-radius: 5px;}
+	.mainlogo span em {position: absolute; top: 7px; left: 30px; font-family: Montserrat,나눔고딕,NanumGothic,돋움,Dotum,sans-serif; font-size: 13px;}
+ 
+	/*하단 박스 부분*/
+	.bottom {background-color: white; height: 180px; width: 100%; box-shadow-top: 10px 10px 5px #000; line-height: 180px; text-align: center; font-size: 12px; color: #474747; border-top: 1px solid #ddd;}
+	
+	/*##########################################################*/
+
+	/*슬라이더 안 글자부분*/
+/*	#brand h1 {display: none; text-align: center; position: absolute; top: 50%; left: 43%; font-family: 'Oswald', sans-serif; font-size: 70px; color: white;}
+	#brand p {display: none; text-align: center; position: absolute; top: 65%; left: 23%; font-family: 'Oswald', sans-serif; font-size: 40px; color: white;}
+	#brand h2 {display: none; text-align: center; position: absolute; top: 50%; left: 44%; font-family: 'Oswald', sans-serif; font-size: 70px; color: white;}
+	#brand p1 {display: none; text-align: center; position: absolute; top: 65%; left: 33%; font-family: 'Oswald', sans-serif; font-size: 40px; color: white;}
+	#brand h3 {display: none; text-align: center; position: absolute; top: 50%; left: 41%; font-family: 'Oswald', sans-serif; font-size: 70px; color: white;}
+	#brand p2 {display: none; text-align: center; position: absolute; top: 65%; left: 25%; font-family: 'Oswald', sans-serif; font-size: 40px; color: white;}
+*/
+	.visual1 h1 {text-align: center; position: absolute; top: 50%; left: 43%; font-family: 'Oswald', sans-serif; font-size: 70px; color: white;}
+	.visual1 p {text-align: center; position: absolute; top: 65%; left: 23%; font-family: 'Oswald', sans-serif; font-size: 40px; color: white;}
+	.visual1 h2 {text-align: center; position: absolute; top: 50%; left: 44%; font-family: 'Oswald', sans-serif; font-size: 70px; color: white;}
+	.visual1 .subtit2 {text-align: center; position: absolute; top: 65%; left: 33%; font-family: 'Oswald', sans-serif; font-size: 40px; color: white;}
+	.visual1 h3 {text-align: center; position: absolute; top: 50%; left: 41%; font-family: 'Oswald', sans-serif; font-size: 70px; color: white;}
+	.visual1 .subtit3 {text-align: center; position: absolute; top: 65%; left: 25%; font-family: 'Oswald', sans-serif; font-size: 40px; color: white;}
+
+	/*슬라이더 부분*/
+	.slider {}
+	/*.slider .sliderframe {position: relative; height: 800px; overflow: hidden;}
+	.slider .sliderframe ul {overflow: hidden; width: 500%; height: 100%; transition: margin-left 0.5s;}
+	.slider .sliderframe ul li {float: left; width: 20%; background-color: gray; height: 100%; counter-increment: page; text-align: center;}
+	.slider .sliderframe ul li label {display: none; position: absolute; line-height: 30px; color: white; font-size: 1.6em; font-weight: bold; top: 50%; margin-top: -15px; opacity: 0.6; text-shadow: 2px 2px 2px rgba(0,0,0,0.5); cursor: pointer;}
+	.slider .sliderframe ul li label:hover {opacity: 1;}
+	.slider .sliderframe ul li .prv {left: 100px;}
+	.slider .sliderframe ul li .next {right: 100px;}
+
+	#pg1:checked~ul {margin-left: 0;}
+	#pg2:checked~ul {margin-left: -100%;}
+	#pg3:checked~ul {margin-left: -200%;}
+
+	#pg1:checked~#brand h2,
+	#pg1:checked~#brand p1,
+	#pg2:checked~#brand h1,
+	#pg2:checked~#brand p,		
+	#pg3:checked~#brand h3,
+	#pg3:checked~#brand p2 {display: block;}
+
+	#pg1:checked~ul li:nth-child(1) label {display: block;}
+	#pg2:checked~ul li:nth-child(2) label {display: block;}
+	#pg3:checked~ul li:nth-child(3) label {display: block;}*/
+
+	.video-fluid {width: 100%; padding-left: 1px;}
+	.item {height: 1016px;}
+
+
+	/*이 아래로 brewery*/
+
+	/*슬라이더 안 글자부분*/
+	#brand h1 {display: none; text-align: center; position: absolute; top: 50%; left: 43%; font-family: 'Oswald', sans-serif; font-size: 70px; color: white;}
+	#brand p {display: none; text-align: center; position: absolute; top: 65%; left: 23%; font-family: 'Oswald', sans-serif; font-size: 40px; color: white;}
+	#brand2 h1 {display: block; text-align: center; position: absolute; top: 50%; left: 43%; font-family: 'Oswald', sans-serif; font-size: 70px; color: white;}
+	#brand2 p {display: block; text-align: center; position: absolute; top: 65%; left: 23%; font-family: 'Oswald', sans-serif; font-size: 40px; color: white;}
+
+
+
+	/*슬라이더 부분*/
+	.slider2 {margin-bottom: 80px;}
+	.slider2 .sliderframe {width: 1900px; position: relative; height: 800px; overflow: hidden;}
+	.slider2 .sliderframe ul {overflow: hidden; width: 500%; height: 100%; transition: margin-left 0.5s;}
+	.slider2 .sliderframe ul li {float: left; width: 20%; background-color: gray; height: 100%; counter-increment: page; text-align: center;}
+	.slider2 .sliderframe ul li label {display: none; position: absolute; line-height: 30px; color: white; font-size: 1.6em; font-weight: bold; top: 50%; margin-top: -15px; opacity: 0.6; text-shadow: 2px 2px 2px rgba(0,0,0,0.5); cursor: pointer;}
+	.slider2 .sliderframe ul li label:hover {opacity: 1;}
+	.slider2 .sliderframe ul li .prv {left: 100px;}
+	.slider2 .sliderframe ul li .next {right: 200px;}
+	.slider2 .sliderframe ul li img {width: 1900px; height: 100%;}
+
+	#pg1:checked~ul {margin-left: 0;}
+	#pg2:checked~ul {margin-left: -100%;}
+	#pg3:checked~ul {margin-left: -200%;}
+	#pg4:checked~ul {margin-left: -300%;}
+	#pg5:checked~ul {margin-left: -400%;}
+	#pg1:checked~ul li:nth-child(1) label {display: block;}
+	#pg2:checked~ul li:nth-child(2) label {display: block;}
+	#pg3:checked~ul li:nth-child(3) label {display: block;}
+	#pg4:checked~ul li:nth-child(4) label {display: block;}
+	#pg5:checked~ul li:nth-child(5) label {display: block;}
+
+	/*비디오 부분*/
+	.videotext {float: left; left: 40%; text-align: center; width: 400px; position: relative; margin-top: 100px;}
+	.video {float: left; height: 400px; width: 400px; border-radius: 10px; border: 2px solid #ddd; position: relative; left: 20%; margin-bottom: 50px; }
+	.videocon {position: relative;}
+	.videocon .youtube {display: block; position: absolute; top: 158px; left: 526px; cursor: pointer; height: 80px; width: 80px; background-color: #fff; border-radius: 50px; opacity: 0.4; cursor: pointer; z-index: 1;}
+	.videocon .youtube:hover {opacity: 0.6;}
+	.videocon2 {position: relative; padding-top: 50px; background-color: #f9f8f9; height: 500px; width: 100%;}
+	.videocon2 .youtube {display: block; position: absolute; top: 209px; left: 528px; cursor: pointer; height: 80px; width: 80px; background-color: #fff; border-radius: 50px; opacity: 0.4; cursor: pointer; z-index: 1;}
+	.videocon .arrow-right {position: absolute; top: 22px; left: 34px; width: 0; height: 0; border-top: 20px solid transparent; border-bottom: 20px solid transparent; border-left: 20px solid #42c3ce; cursor: pointer;}
+	.videocon2 .arrow-right {position: absolute; top: 230px; left: 562px; width: 0; height: 0; border-top: 20px solid transparent; border-bottom: 20px solid transparent; border-left: 20px solid #42c3ce; cursor: pointer;}
+	.videocon2 .youtube:hover {opacity: 0.6;}
+	
+
+
+	/*이 아래로 beer 부분*/
+
+	.contents {padding: 50px 50px 50px 30px; margin-bottom: 50px;}
+	.beerinner .contents section {float: left; height: 700px; width: 400px; margin-left: 30px;}
+	.beerinner .contents img {height: 100%; width: 100%; border-radius: 10px;}
+	.beerinner .contents .wittit {position: relative; display: block; background-image: url(../img/img_title_jeju_wit_ale.png);	background-size: 80%; text-indent: -9999px; height: 115px; }
+	.beerinner .contents section .pellongtit {display: block; background-image: url(../img/img_title_jeju_pellong_ale.png);  text-indent: -9999px; background-size: cover; height: 115px; background-size: 80%;}
+	.beerinner .contents section .witinfo {}
+	.beerinner .contents section .pellonginfo {}
+	.beerinner .contents section p {font-size: 14px; font-weight: 700; margin-top: 100px; text-align: center;}
+	.beerinner .contents section .picinfo {width: 200px; height: 80px; margin-left: 25%; margin-top: 80px;}
+	.beerinner .contents section a {display: block; text-align: center; background: #fff; width: 193px; height: 44px; line-height: 44px; font-size: 12px; color: #22abb8; font-weight: 700; margin-left: 25%; margin-top: 50px; border: 1px solid #22abb8; text-transform: uppercase;}
+	.beerinner .contents section .witgo {color: #1dcad3; border: 1px solid #1dcad3;}
+	.beerinner .contents section a:hover {color: #fff; background-color: #22abb8; text-decoration: none;}
+	.beerinner .contents section .witgo:hover {color: #fff; background-color: #1dcad3;}
+	.beerreview {position: relative; margin-bottom: 50px; color: #fff;}
+	
+	.beerreview .slider {height: 600px; text-indent: -9999px; position: relative; display: inline-block;}
+	.beerreview .slider .bgVisual {position: absolute; top: 0; right: 0px; left: 60px; z-index: 1; height: 600px; width: 800px; animation: slider 12s infinite;}
+	.beerreview .slider i {position: relative; float: left; bottom: -560px; left: 420px; display: block; width: 8px; height: 8px; background-color: rgba(255,255,255,.4); border-radius: 50%; z-index: 4; opacity: 0.25; animation: sliderpointer 12s infinite;}
+	.beerreview .slider i+i {margin-left: 10px;}
+	.beerreview .slider :nth-child(1) {animation-delay: 0s;}
+	.beerreview .slider :nth-child(2) {animation-delay: 2s;}
+	.beerreview .slider :nth-child(3) {animation-delay: 4s;}
+	.beerreview .slider :nth-child(4) {animation-delay: 6s;}
+	.beerreview .slider :nth-child(5) {animation-delay: 8s;}
+	.beerreview .slider :nth-child(6) {animation-delay: 10s;}
+
+	.beerreview .sliderhelper {position: absolute; top: 100px;  width: 100%; height: 400px; background-color: #42c3ce;}
+	.beerreview .sliderinfo {float: right; margin-right: 180px; margin-top: 150px; display: inline-block; width: 700px;}
+	.beerreview .sliderinfo h3 {font-size: 35px; font-weight: 800; color: #fff; line-height: 1.55em; letter-spacing: 3.8px; text-decoration: underline; margin-bottom: 15px;}
+	.beerreview .sliderinfo p {font-size: 20px; margin-bottom: 10px;}
+	.beerreview .sliderinfo ul {padding-left: 20px; margin-bottom: 10px;}
+	.beerreview .sliderinfo ul li {list-style: square;}
+	.beerreview .sliderinfo h4 {font-size: 30px; font-weight: 800; color: #fff; line-height: 1.55em; letter-spacing: 3.8px;}
+
+	 /*이 아래로 ourstory*/
+
+	.ourwrap {position: relative; overflow: hidden; margin: auto; width: 1400px;}
+	.ourwrap .mainour {float: left; text-align: center; margin: 20px 0 0 0; padding: 80px; z-index: 2;}
+	.ourwrap .mainour h2 {font-size: 35px; font-weight: 800; color: #474747; line-height: 1.55em; letter-spacing: 3.8px; text-decoration: underline;}
+	.ourwrap .mainour p {margin-top: 30px; margin-bottom: 50px; font-size: 14px; line-height: 1.6em; color: #333; letter-spacing: -.4px;}
+	.ourwrap .mainour img {width: 540px;}
+
+	.ourwrap .ourlogo {float: left; text-align: center; margin: 20px 0 0 0; padding: 80px; z-index: 2;}
+	.ourwrap .ourlogo h2 {font-size: 35px; font-weight: 800; color: #474747; line-height: 1.55em; letter-spacing: 3.8px; text-decoration: underline;}
+	.ourwrap .ourlogo p {margin-top: 30px; margin-bottom: 50px; font-size: 14px; line-height: 1.6em; color: #333; letter-spacing: -.4px;}
+	.ourwrap .ourlogo .logovideo {}
+	.ourwrap .ourwrapbg {margin-top: 725px; width: 100%; height: 270px; background: url(../img/story_info_bg.jpg) no-repeat 50%; margin-bottom: 100px;}
+
+	/*이 아래로 contact*/
+
+	.contactWrap {text-align: center;}
+	.contactWrap h2 {margin: 50px 0 100px 0; font-size: 35px; font-weight: 800; color: #474747; line-height: 1.55em; letter-spacing: 3.8px; text-decoration: underline;}
+	.contactWrap p {margin-top: 30px; margin-bottom: 50px; font-size: 14px; line-height: 1.6em; color: #333; letter-spacing: -.4px;}
+	.contactWrap #map_view {width: 100%; height: 500px; margin-bottom: 50px;}
+
+	.contactWrap .beershop {overflow: hidden; position: relative; margin-bottom: 100px;}
+	.contactWrap .beershop h2 {text-decoration: none;}
+	.contactWrap .beershop {text-align: center;}
+	.contactWrap .beershop ul {display: block; margin: auto; padding-left: 55px; overflow: hidden; width: 1200px;}
+	.contactWrap .beershop ul li {float: left; margin: 20px; width: 230px;}
+	.contactWrap .beershop ul li a {overflow: hidden; display: block; position: relative;}
+	.contactWrap .beershop ul li a .thumb {overflow: hidden; display: block; height: 150px;}
+	.contactWrap .beershop ul li a .thumb img {display: block; width: 230px; height: 150px;}
+	.contactWrap .beershop ul li a .info {position: absolute; bottom: -24px; left: 0; padding: 4px 10px; width: 100%; height: 54px; color: #fff; background-color: rgba(0,0,0,.6); transition: .2s; z-index: 1;}
+	.contactWrap .beershop ul li:hover a .info {bottom: 0;}
+	.contactWrap .beershop ul li a .info .shopName {display: block; font-size: 13px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px;}
+	.contactWrap .beershop ul li a .info .location {display: block; font-size: 12px;}
+	
+	.contactWrap .beershop .shopbtn {position: absolute; top: 153px; left: 760px; margin-right: 30px;}
+	.contactWrap .beershop .shopbtn label+label {margin-left: 10px;}
+	.contactWrap .beershop .shopbtn label:hover {font-weight: bold; color: #3bc1cd;}
+	.contactWrap .beershop .list1 {display: none;}
+	.contactWrap .beershop .list2 {display: none;}
+	.contactWrap .beershop .list3 {display: none;}
+	.contactWrap .beershop .list4 {display: none;}
+	.contactWrap #shoplist1:checked~ .beershop .list1 {display: block;}
+	.contactWrap #shoplist2:checked~ .beershop .list2 {display: block;}
+	.contactWrap #shoplist3:checked~ .beershop .list3 {display: block;}
+	.contactWrap #shoplist4:checked~ .beershop .list4 {display: block;}
+	.contactWrap #shoplist1:checked~ .beershop .shopbtn .shopbtn1, 
+	.contactWrap #shoplist2:checked~ .beershop .shopbtn .shopbtn2,
+	.contactWrap #shoplist3:checked~ .beershop .shopbtn .shopbtn3,
+	.contactWrap #shoplist4:checked~ .beershop .shopbtn .shopbtn4 {color: #3bc1cd; padding-bottom: 2px; border-bottom: 1px solid #3bc1cd; font-weight: bold;}
+
+	/*이 아래로 tour*/
+	
+	.ttslider {text-align: center;}
+	.ttslider h2 {font-size: 35px; font-weight: 800; color: #474747; line-height: 1.55em; letter-spacing: 3.8px; text-decoration: underline;}
+	.ttslider h2:first-child {margin-top: 70px;}
+	.ttslider p {font-size: 14px; line-height: 1.6em; color: #333; letter-spacing: -.4px; margin-bottom: 30px;}
+	.ttslider img {width: 656px;}
+	.ttslider .tourslider {margin-bottom: 100px;}
+	.ttslider .tourslider ul {width: 4400px; height: 500px; animation: slider2 20s linear infinite alternate; overflow: hidden;}
+	.ttslider .tourslider ul:hover {animation-play-state: paused;}
+	.ttslider .tourslider ul li {float: left; position: relative;}
+	.ttslider .tourslider ul li+li {margin-left: 20px;}
+	.ttslider .tourslider ul li img {}
+	.ttslider .pubslider {margin-bottom: 100px;}
+	.ttslider .pubslider ul {width: 4400px; height: 500px; animation: slider2 20s linear infinite alternate; overflow: hidden;}
+	.ttslider .pubslider ul:hover {animation-play-state: paused;}
+	.ttslider .pubslider ul li {float: left;}
+	.ttslider .pubslider ul li+li {margin-left: 20px;}
+	.ttslider .pubslider ul li img {}
+	.ttslider .giftslider {margin-bottom: 100px;}
+	.ttslider .giftslider ul {width: 4400px; height: 500px; animation: slider2 20s linear infinite alternate; overflow: hidden;}
+	.ttslider .giftslider ul:hover {animation-play-state: paused;}
+	.ttslider .giftslider ul li+li {margin-left: 20px;}
+	.ttslider .giftslider ul li {float: left;}
+	.ttslider .giftslider ul li img {}
+
+
+	
+
+	@keyframes slider2 {
+		0% {margin-left: 0;}
+		100% {margin-left: -2100px;}
+	}
+
+	@keyframes horizontal {         
+	        0% {margin-left: 9px;}
+	        50% {margin-left: 11px;}
+	        100% {margin-left: 9px;}
+	}
+
+	@keyframes slider {
+		0% {z-index: 3;}
+		16.6666% {z-index: 3;}
+		16.6667% {z-index: 1;}
+		100% {z-index: 1;}
+	}
+
+	@keyframes sliderpointer {
+		0% {opacity: 1; background-color: #fff;}
+		11.1111% {opacity: 1; background-color: #fff;}
+		11.1112% {opacity: 0.25;}
+		100% {opacity: 0.25;}
+	}

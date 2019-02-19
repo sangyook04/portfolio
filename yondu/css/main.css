@@ -1,0 +1,470 @@
+.top {position: fixed; bottom: 100px; right: -100px; width: 60px; height: 60px; color: white; font-size: 18px; font-weight: bold; text-align: center; line-height: 60px; background-color: #b8d360; cursor: pointer; transition: right 0.5s; z-index: 50; border-radius: 30px;}
+.top.active {right: 10px;}
+
+/*@import url('//cdn.jsdelivr.net/font-Iropke-batang/1.2/font-iropke-batang.css');*/
+body {overflow-x:hidden; overflow-y:auto;}
+header {border-bottom: 2px solid #6a9b2f;}
+header .inner {padding: 0 31px 0 50px;}
+header nav {position: relative; overflow: hidden;}
+header nav .mainlogo {float: left; display: block; width: 148px;
+    height: 114px; background: url(../img/mainlogo.png) 25px 18px no-repeat; text-indent: -9999px;}
+header nav .mainlogo img {width: 148px; height: 114px;}
+header nav .gnb {position: absolute; top: 15px; right: 47px;}
+header nav .gnb ul {overflow: hidden;}
+header nav .gnb ul li {float: left;}
+header nav .gnb ul li a {display: block; overflow: hidden; width: 28px; height: 28px; background: #ccc; text-indent: -9999px; border-radius: 50%; transition: all .2s ease-out;}
+header nav .gnb ul .bb a {background: #ccc url(../img/sm_nb.png) center center no-repeat;}
+header nav .gnb ul .facebook a {background: #ccc url(../img/sm_fb.png) center center no-repeat;}
+header nav .gnb ul .youtube a {background: #ccc url(../img/sm_yt.png) center center no-repeat;}
+header nav .gnb ul .kakao a {background: #ccc url(../img/sm_ks.png) center center no-repeat;}
+header nav .gnb ul .sam a {background: #ccc url(../img/sm_sp.png) center center no-repeat;}
+header nav .gnb ul li+li {margin-left: 9px;}
+header nav .mainmenu {float: right; padding: 58px 0 0 0; height: 114px;}
+header nav .mainmenu ul {overflow: hidden;}
+header nav .mainmenu ul li {float: left;}
+header nav .mainmenu ul li a {display: block; height: 56px; padding: 9px 45px;    color: #333; line-height: 1em; letter-spacing: -0.04em; font-size: 20px; text-align: center; transition: all .2s ease-out; text-decoration: none;}
+header nav .mainmenu ul li a:hover {color: #6a9b2f;}
+
+
+footer {height: 120px; background-color: #30332e;}
+footer .footerlogo {display: block; position: absolute; top: 34px; left: 0;}
+footer .footerinfo {float: left;}
+footer .footerinfo .link {margin: 0 0 11px 0; color: #fff; line-height: 1em; letter-spacing: -0.05em; font-size: 15px;}
+footer .footerinfo .link ul {overflow: hidden;}
+footer .footerinfo .link ul li {float: left;}
+footer .footerinfo .link ul li a {color: inherit; text-decoration: none; line-height: 1em; outline: none;}
+footer .footerinfo .link ul li a:hover {text-decoration: underline;}
+footer .footerinfo .link ul li+li {margin-left: 10px;}
+footer .footerinfo p {display: block; margin: 0 0 20px 0; color: rgba(255,255,255,.5); line-height: 1em; letter-spacing: -0.03em; font-size: 12px;}
+footer .footerinfo .award {position: absolute; top: 25px; right: 75px;}
+footer .footerinfo .award .img {}
+
+
+#container {}
+#container .visual1 {height: 750px;}
+#container .visual1 .item {height: 750px; background-color: black;}
+#container .visual1 .item img {height: 100%;}
+#container .visual1 .item a {}
+#container .visual1 .item a video {width: 100%; height: 100%;}
+
+
+
+#container .video2 {padding: 135px 0 138px 0;}
+#container .video2 span {display: block; margin: 0 0 13px 0; color: #094516; line-height: 1em; letter-spacing: -0.04em; font-family: 'Noto Sans KR', sans-serif; font-size: 20px; text-align: center;}
+#container .video2 h2 {color: #094516; line-height: 1em; letter-spacing: -0.04em; font-family: 'Noto Sans KR', sans-serif; font-size: 30px; font-weight: bold; text-align: center; margin-bottom: 40px;}
+#container .video2 .videobox {width: 100%;}
+#container .video2 .videobox iframe {width: 100%; height: 619px;}
+
+#container .recipe {padding: 125px 0 100px 0; background: #f5f5f5; text-align: center;}
+#container .recipe h2 {color: #094516; line-height: 1em; letter-spacing: -0.04em; font-family: 'Noto Sans KR', sans-serif; font-size: 30px; font-weight: bold; text-align: center;}
+#container .recipe ul {overflow: hidden; width: 1112px; margin: 50px auto 60px auto;}
+#container .recipe ul li {float: left; width: 266px; height: 396px;}
+#container .recipe ul li a {position: relative;}
+#container .recipe ul li a .dim {}
+#container .recipe ul li a img {width: 100%; height: 266px;}
+#container .recipe ul li a .txtbox {height: 130px; padding: 39px 39px 40px 35px; background: #fff; text-align: center;}
+#container .recipe ul li a .txtbox .txt {margin: 0 0 14px 0; color: #999; line-height: 1em; margin-bottom: 13px; font-size: 13px;}
+#container .recipe ul li a .txtbox .tit {color: #333; line-height: 1.1em; letter-spacing: -0.04em; font-family: 'Noto Sans KR', sans-serif; font-size: 22px;}
+/*#container .recipe ul li:hover {width: 544px;}*/
+#container .recipe ul .active {width: 544px; transition: all 0.4s;}
+#container .recipe ul .active .txtbox .txt {font-size: 16px;}
+#container .recipe ul .active .txtbox .tit {font-size: 30px;}
+#container .recipe .btn_more {display: inline-block; min-width: 25px; height: 55px; padding: 12px 30px; background: #388211;
+    color: #fff; letter-spacing: -0.04em; font-size: 20px; text-align: center; transition: all .2s ease-out; text-decoration: none;}
+#container .recipe .btn_more:hover {background-color: #276506;}
+
+
+
+
+
+#container {}
+#container .visual2 {height: 640px;}
+#container .visual2 .item {position: relative; height: 640px; background-color: black;}
+#container .visual2 .item .bgimg {height: 100%;}
+#container .visual2 .item .product {position: absolute; top: 113px; left: 50%; margin: 0 0 0 -299px; width: 288px; height: 477px;}
+#container .visual2 .item .txtarea {position: absolute; top: 245px; left: 50%; width: 423px; text-align: center; color: #094516;}
+#container .visual2 .item .txtarea .tit {margin: 0 0 20px 0; line-height: 1em; letter-spacing: -0.05em; font-family: 'Noto Sans KR', sans-serif; font-size: 32px; font-weight: bold;}
+#container .visual2 .item .txtarea .txt {margin: 0 0 40px 0; line-height: 1em; letter-spacing: -0.03em; font-size: 18px;}
+#container .visual2 .item .txtarea a {display: block; width: 150px; height: 40px; margin: 0 auto; padding: 0 0 0 55px; color: #fff; line-height: 40px; letter-spacing: -0.03em; font-size: 18px; text-align: left; transition: all .2s ease-out; background: #388211 url(../img/icon_cart.png) 29px center no-repeat; text-decoration: none;}
+#container .visual2 .item .txtarea a:hover {background-color: #286507;}
+#container .visual2 .color1 .txtarea {color: #dc261c;}
+#container .visual2 .color2 .txtarea {color: #c08846;}
+#container .visual2 .color3 .txtarea {color: #dc261c;}
+#container .visual2 .color1 .txtarea a {background-color: #dc261c;}
+#container .visual2 .color2 .txtarea a {background-color: #e07904;}
+#container .visual2 .color3 .txtarea a {background-color: #dc261c;}
+#container .visual2 .color1 .txtarea a:hover {background-color: #b94e00;}
+#container .visual2 .color2 .txtarea a:hover {background-color: #c08846;}
+#container .visual2 .color3 .txtarea a:hover {background-color: #680805;}
+
+
+/*story페이지로 넘어감*/
+#container .yonduadd {padding: 120px 0 87px 0;}
+#container .yonduadd p {margin: 0 0 20px 0; color: #666;line-height: 1em; letter-spacing: -0.05em; font-size: 26px; text-align: center;}
+#container .yonduadd h2 {color: #333; line-height: 1.3em; letter-spacing: -0.04em; font-family: 'Noto Sans KR', sans-serif; font-size: 42px; font-weight: bold; margin-bottom: 55px; text-align: center;}
+#container .yonduadd ul {position: relative; width: 844px; height: 388px; margin: 0 auto; background-image: url(../img/cont1_visual_bg.png);}
+#container .yonduadd ul li {position: absolute; height: 20px; padding: 0 44px; background: url(../img/cont1_visual_icon1.png) 0 center no-repeat, url(../img/cont1_visual_icon2.png) right center no-repeat; color: #666; line-height: 1em; letter-spacing: -0.05em; font-size: 20px;}
+#container .yonduadd ul li:nth-child(1) {top: 62px; right: 57px;}
+#container .yonduadd ul li:nth-child(2) {top: 120px; left: 52px;}
+#container .yonduadd ul li:nth-child(3) {top: 190px; left: 180px;}
+#container .yonduadd ul li:nth-child(4) {top: 260px; right: 58px;}
+#container .yonduadd ul li:nth-child(5) {top: 301px; left: 52px;}
+
+#container .yondugood {padding: 112px 0 130px 0; background: #f5f5f5; text-align: center;}
+#container .yondugood h2 {color: #333; line-height: 1.3em; letter-spacing: -0.04em; font-family: 'Noto Sans KR', sans-serif; font-size: 42px; font-weight: bold; text-align: center;}
+#container .yondugood ul {overflow: hidden; width: 970px; margin: 0 auto; padding: 90px 0 0 0;}
+#container .yondugood ul li {float: left; margin: 0 60px; text-align: center;}
+#container .yondugood ul li .numimg {margin-bottom: 30px;}
+#container .yondugood ul li .foodimg {width: 100%; height: 135px;} 
+#container .yondugood ul li p {margin: 0 0 55px 0; color: #333; line-height: 1.5em; letter-spacing: -0.04em; font-size: 16px;}
+/*#container .yondugood ul li p strong {color: #82b434;}*/
+
+
+#container .yondufind {height: 670px; padding: 160px 0 0 0; background: url(../img/cont3_bg.jpg) center center no-repeat; background-size: cover; text-align: center; color: #fff;}
+#container .yondufind h2 {line-height: 1.3em; letter-spacing: -0.04em; font-family: 'Noto Sans KR', sans-serif; font-size: 42px; font-weight: bold; text-align: center; margin-bottom: 55px;}
+#container .yondufind p {margin: 18px 0 0 0; line-height: 1.6em;
+    letter-spacing: -0.03em; font-size: 26px; text-align: center;}
+
+/*다음부터 global*/
+#container .global {padding: 100px 0 60px 0; text-align: center;}
+#container .global .firsttit {margin: 0 0 20px 0; color: #666;  line-height: 1em; letter-spacing: -0.05em; font-size: 26px;}
+#container .global h2 {margin: 0 0 30px 0; color: #333; line-height: 1em; letter-spacing: -0.05em; font-family: 'Noto Sans KR', sans-serif; font-size: 42px; font-weight: bold;}
+#container .global .titinfo {margin: 0 0 70px 0; color: #666; line-height: 1.5em; letter-spacing: -0.05em; font-size: 18px;}
+
+#container .global .visual3 {}
+#container .global .visual3 .item {position: relative; height: 535px; padding: 115px 0 0 620px; background-image: url(../img/slide_bg.jpg);}
+#container .global .visual3 .item img {position: absolute; top: 24px; left: 160px; width: 420px; height: 480px;}
+#container .global .visual3 .item .cheftext {width: 520px; height: 400px;}
+#container .global .visual3 .item .cheftext .icon {display: block; width: 24px; height: 17px; margin: 0 auto 18px auto; background: url(../img/cont1_visual_icon1.png) 0 0 no-repeat;}
+#container .global .visual3 .item .cheftext p {margin: 0 0 15px 0; color: #fff; line-height: 1.6em; letter-spacing: -0.05em; font-family: 'Noto Sans KR', sans-serif; font-size: 18px;}
+#container .global .visual3 .item .cheftext .name {display: block; margin: 0 0 9px 0; color: #fff; line-height: 1em; letter-spacing: -0.05em; font-size: 20px; font-weight: bold;}
+#container .global .visual3 .item .cheftext .ename {display: block; margin: 0 0 15px 0; color: #b2b2b2; line-height: 1em; font-size: 14px;}
+#container .global .visual3 .item .cheftext .chefinfo {display: block; color: #f2c549; line-height: 1em; letter-spacing: -0.05em; font-size: 16px;}
+
+
+/*다음부터 ourrecipe*/
+
+#container .recipetit {height: 260px; padding: 65px 0 0 0; background: url(../img/subtit_bg.jpg) center center no-repeat; background-size: cover; text-align: center;}
+#container .recipetit h2 {margin: 0 0 20px 0; color: #fff; line-height: 1em; letter-spacing: -0.05em; font-family: 'Noto Sans KR', sans-serif; font-size: 42px;}
+#container .recipetit p {color: #fff; line-height: 1.4em; letter-spacing: -0.05em; font-size: 20px;}
+
+#container .reform {position: relative; bottom: 30px; text-align: center;}
+#container .searchhelper {width: 544px; height: 60px; margin: -30px auto 30px auto; padding: 5px; background: #6aa302; overflow: hidden;} 
+#container .reform #search {float: left; width: 479px; height: 50px; padding: 0 10px; border: 1px solid #ccc; color: #333; background-color: #fff; line-height: 48px; letter-spacing: -0.05em; font-size: 22px;}
+#container .reform #gogo {display: block; float: left; overflow: hidden; width: 55px;height: 50px; border: none; background: url(../img/searchbox_btn.png) center center no-repeat; text-indent: -9999px;}
+
+.wraprecipe {background-color: #f5f5f5;  padding-bottom: 80px;}
+.wraprecipe span {display: block; margin: 0 0 30px 0; color: #333; line-height: 1em; font-size: 18px; max-width: 1100px; margin: auto; padding-left: 12px; margin-bottom: 20px;}
+.wraprecipe span b {display: inline-block; color: #82b434;}
+/* ---- grid ---- */
+
+.wraprecipe .grid {max-width: 1100px; margin: auto; padding-left: 12px;}
+
+/* clear fix */
+.wraprecipe .grid:after {content: ''; display: block; clear: both;}
+
+/* ---- .wraprecipe .grid-item ---- */
+
+.wraprecipe .grid-item {float: left; width: 266px; height: 287px; background: rgba(0,0,0,0.5); margin-bottom: 20px;}
+.wraprecipe .grid-item .thumb {height: 177px;}
+.wraprecipe .grid-item .thumbinfo {width: 100%; height: 110px; padding: 22px 60px 0 20px; background: #fff;} 
+.wraprecipe .grid-item .thumbinfo .smalltit {margin: 0 0 8px 0; color: #999; line-height: 1.5em; letter-spacing: -0.05em; font-size: 14px;}
+.wraprecipe .grid-item .thumbinfo .maintit {color: #333; line-height: 1em; letter-spacing: -0.05em; font-family: 'Noto Sans KR', sans-serif; font-size: 22px; font-weight: bold;}
+
+.wraprecipe .grid-item--height2 {height: 376px;}
+.wraprecipe .grid-item--height3 {height: 509px;}
+.wraprecipe .grid-item--height2 .thumb {height: 266px;}
+.wraprecipe .grid-item--height3 .thumb {height: 399px;}
+.wraprecipe .grid-item img {width: 266px; height: 177px;}
+.wraprecipe .grid-item--height2 img {width: 266px; height: 266px;}
+.wraprecipe .grid-item--height3 img {width: 266px; height: 399px;}
+
+/*다음부터 introduce*/
+
+#introwrap {text-align: center;}
+#introwrap h2 {color: #333; line-height: 1em; letter-spacing: -0.03em; font-family: 'Noto Sans KR', sans-serif; font-size: 28px; font-weight: bold; text-align: center;}
+
+#introwrap p {color: #333; line-height: 1.5em; letter-spacing: -0.03em; font-size: 22px; text-align: center;}
+#introwrap .introp {display: block; margin: 0 0 20px 0; color: rgba(255,255,255,.5); line-height: 1em; letter-spacing: -0.03em; font-size: 12px; text-align: left;}
+#introwrap .pointimg {margin-bottom: 40px;}
+
+#container .how {padding: 105px 0 160px 0;}
+#container .how h2 {margin-bottom: 32px;}
+#container .how p {}
+#container .how .imgvisual {position: relative; width: 100%; width: 970px; height: 461px; margin: 55px auto 95px auto;}
+#container .how .imgvisual img {position: absolute;}
+#container .how .imgvisual .img1 {top: 2px; left: 0;}
+#container .how .imgvisual .img2 {top: 79px; left: 302px;}
+#container .how .imgvisual .img3 {top: 0; right: 0;}
+#container .how .imgvisualmini {display: none;}
+#container .how .chartimg {margin-top: 40px; width: 70%;}
+
+#container .use {background: #f5f5f5; padding-top: 80px; padding-bottom: 80px;}
+#container .use img {}
+#container .use h2 {}
+#container .usevisual {position: relative; width: 845px; height: 288px; margin: 86px auto 88px auto; background: url(../img/cont2_visual_bg.png) center 0 no-repeat;}
+#container .use .usevisual .use1 {}
+#container .use .usevisual .use1 li {position: absolute; left: 50%; color: #333; line-height: 1.5em; letter-spacing: -0.05em; font-size: 16px; white-space: nowrap; }
+#container .use .usevisual .use1 li:nth-child(1) {top: 17px; margin-left: -400px; padding-right: 128px; padding-bottom: 15px; background: url(../img/cont2_visual_border1.png) right 35px no-repeat; text-align: right;}
+#container .use .usevisual .use1 li:nth-child(2) {top: 17px; margin-left: 101px; padding-left: 129px; padding-bottom: 17px; background: url(../img/cont2_visual_border2.png) 0 35px no-repeat; text-align: left;}
+#container .use .usevisual .use1 li:nth-child(3) {top: 158px; margin-left: -360px; padding-right: 128px; background: url(../img/cont2_visual_border3.png) 145px 15px no-repeat; text-align: right;}
+#container .use .usevisual .use1 li:nth-child(4) {top: 158px; margin-left: 115px; padding-left: 115px; padding-bottom: 0; background: url(../img/cont2_visual_border4.png) 0 15px no-repeat; text-align: left;}
+#container .use .subtitde {display: block; position: absolute; bottom: 0; left: 0; width: 100%; color: #999; line-height: 1em; letter-spacing: -0.03em; font-size: 14px; text-align: center;}
+#container .use .subtit {display: block; margin: 0 0 30px 0; color: #333; line-height: 16px; letter-spacing: -0.03em; font-size: 16px;}
+#container .use .subtitde2 {color: #999; font-size: 14px;}
+
+
+/* ---- grid ---- */
+
+#introwrap .use .grid {max-width: 1100px; margin: auto; padding-left: 12px;}
+
+/* clear fix */
+#introwrap .use .grid:after {content: ''; display: block; clear: both;}
+
+/* ---- #introwrap .use .grid-item ---- */
+
+#introwrap .use .grid-item {width: 260px; height: 311px; padding-top: 38px;}
+#introwrap .use .grid-item img {margin-bottom: 37px;}
+#introwrap .use .grid-item .tit {margin: 0 0 15px 0; color: #333; line-height: 1em; letter-spacing: -0.03em; font-size: 22px; height: 22px; white-space: nowrap;}
+#introwrap .use .grid-item .txt {color: #333; line-height: 1.5em; letter-spacing: -0.05em; font-size: 16px; height: 48px;}
+
+
+#container .choice {padding: 130px 0 178px 0;}
+#container .choice img {}
+#container .choice h2 {}
+
+/*다음부터 now 아래에 json 준비해둠*/
+
+
+/* ---- grid ---- */
+#nowwrap {background-color: #f5f5f5;}
+#nowwrap .grid {display: block; max-width: 1124px; margin: auto; padding: 40px 0 28px 0;}
+#nowwrap header {background-color: #fff;}
+/* clear fix */
+#nowwrap .grid:after {content: ''; display: block; clear: both;}
+
+/* ---- #nowwrap .grid-item ---- */
+
+#nowwrap .grid .grid-item {float: left; width: 544px; height: 384px; margin-left: 12px; margin-bottom: 10px;}
+#nowwrap .grid .grid-item {}
+#nowwrap .grid .grid-item .thumb {width: 544px; height: 260px;}
+#nowwrap .grid .grid-item .textarea {width: 544px; height: 124px; padding: 31px 30px 0 30px; background: #fff;}
+#nowwrap .grid .grid-item .textarea .tit {width: 484px; margin: 0 0 13px 0; color: #333; line-height: 1em; letter-spacing: -0.05em; font-family: 'Noto Sans KR', sans-serif; font-size: 21px;}
+#nowwrap .grid .grid-item .textarea .day {display: block; color: #999; line-height: 1em; font-size: 14px;}
+#nowwrap .grid .grid-item a {position: relative;}
+#nowwrap .grid .grid-item a:after {content: ""; display: block; clear: both;}
+
+#nowwrap .grid .grid-item a i {display: block; position: absolute; top: 10px; left: 5px; width: 30px; height: 30px; text-align: center;  background-color: rgba(200,0,0,0.7); border-radius: 15px; z-index: 2;}
+#nowwrap .grid .grid-item a i:after {content: "NEW"; color: #fff; font-size: 10px;font-weight: bold; line-height: 30px;}
+
+
+#nowwrap #container .sort {text-align: center; width: 100%; height: 93px; margin: 0 auto; padding: 47px 0 0 0; border-bottom: 1px solid #ccc; font-size: 20px; color: #666; letter-spacing: -0.05em;}
+#nowwrap #container .sort .active {color: #6a9b2f;}
+#nowwrap #container .sort input {display: inline-block; font-size: 20px;}   
+#nowwrap #container .sort input+input {margin-left: 20px;}
+
+.smallPC {display: none;}
+@media screen and (max-width: 1190px) {
+	header {max-width: 1190px;}
+  	.PC {display: none;}
+	.smallPC {display: block; position: relative; height: 50px;}
+	.smallPC nav {height: 50px; text-align: center;}
+	.smallPC nav a .minlogo {height: 80%; padding-top: 10px;}
+	.smallPC #buttonmenu {display: block; position: absolute; top: 0px; left: 0px; width: 48px; height: 48px; background-color: #eee;}
+	.smallPC .mainmenu2 .menu2logo {display: block; margin-left: 77px; margin-bottom: 50px;}
+	.smallPC .mainmenu2 .menu2footer {display: block; margin-top: 227px; margin-left: 45px;}
+	.smallPC .mainmenu2 {position: fixed; text-align: center; top: 0; bottom: 0; left: -250px; width: 250px; background-image: url(../img/cont5_bg1.jpg); background-size: cover; transition: left 0.4s; z-index: 10; padding-top: 28px;}
+	.smallPC .mainmenu2 ul {}
+	.smallPC .mainmenu2 ul li {border-bottom: 2px solid #fff; padding: 20px 0;}
+	.smallPC .mainmenu2 ul li a {display: block; font-size: 17px; padding-left: 49px; color: #fff;}
+	.smallPC #menu2btn:checked~.mainmenu .mainmenu2 {left: 0;}
+
+  	.smallPC #buttonmenu {display: block; position: absolute; top: 0; left: 0; height: 48px; width: 48px; border-left: 2px solid #ddd; color: white; text-align: center; line-height: 30px; cursor: pointer; border-radius: 4px; font-size: 12px; transition: left 0.4s 0s; background-color: #fff; z-index: 5;}
+	.smallPC #buttonmenu i {position: absolute; left: 50%; width: 20px; margin: -1px 0 0 -10px; height: 2px; background-color: #474747;}
+	.smallPC #menu2btn:not(:checked)~#buttonmenu i {transition: top 0.4s 0.4s, transform 0.4s 0s, opacity 0s 0.4s;}
+	.smallPC :checked~#buttonmenu i {transition: top 0.4s 0s, transform 0.4s 0.4s, opacity 0s 0.4s;}
+	.smallPC #buttonmenu i:nth-child(1) {top: 30%;}
+	.smallPC #buttonmenu i:nth-child(2) {top: 50%;}
+	.smallPC #buttonmenu i:nth-child(3) {top: 70%;}
+	.smallPC #menu2btn:checked~#buttonmenu i {top: 50%;}
+	.smallPC #menu2btn:checked~#buttonmenu i:nth-child(1) {transform: rotate(45deg);}
+	.smallPC #menu2btn:checked~#buttonmenu i:nth-child(2) {opacity: 0;}
+	.smallPC #menu2btn:checked~#buttonmenu i:nth-child(3) {transform: rotate(-45deg);}
+	.smallPC #menu2btn:checked~#buttonmenu {left: 250px;}
+
+	.smallPC nav {text-align: center; position: relative; width: 100%;}
+	.smallPC nav .mainlogo {display: block; width: 50px; height: 48px; position: relative; left: 100px;}
+	.smallPC nav .mainlogo img {width: 50px; height: 48px;}
+	header nav .gnb {position: absolute; top: 10px; right: 30px;}
+	header nav .mainmenu ul li a {position: relative; width: 250px; padding: 16px 45px; border-bottom: 1px solid #fff;}
+	header nav .mainmenu ul li a:after {content: ""; display: block; position: absolute; top: 17px; right: 24px; width: 20px; height: 20px; background-image: url(../img/slide_next.png);}
+	header nav .mainmenu ul li a:before {content: ""; display: block; position: absolute;
+    top: 9px; left: 17px; width: 33px; height: 41px; background-image: url(../img/cont3_product_pro1.png); background-size: 100%;}
+    header nav .mainmenu ul li:nth-child(3) a:before {background-image: url(../img/cont3_product_pro2.png);}
+    header nav .mainmenu ul li:nth-child(4) a:before {background-image: url(../img/cont3_product_pro3.png);}
+    header nav .mainmenu ul li:nth-child(5) a:before {background-image: url(../img/cont3_product_pro4.png);}
+    header nav .mainmenu ul li:nth-child() a:before {background-image: url(../img/cont3_product_pro4.png);}
+    .inner {width: 100%;}
+
+	#container .recipe ul {width: 100%;}
+	#container .recipe ul li {width: 100%; margin-bottom: 20px;}
+	#container .recipe ul li a img {width: 100%;}
+	#container .recipe ul .active {width: 100%;}
+
+	/*여기부터 story*/
+
+	#container .yondugood ul {width: 100%; padding-left: 10%;}
+	#container .yondugood ul li {position: relative; left: 2%; margin-bottom: 20px;}
+
+	/*여기부터 글로벌*/
+
+	#container .global .visual3 .item {position: relative; height: 748px; padding: 0;}
+	#container .global .visual3 .item img {position: absolute; top: 0%; left: 28%; width: 49%; height: 37%;}
+	#container .global .visual3 .item .cheftext {width: 100%; padding-top: 284px; padding-left: 12px; font-size: 14px;}
+	#container .global .visual3 .item .cheftext p {font-size: 15px;}
+	
+	
+	/*여기부터 우리맛레시피*/
+	.wraprecipe span,
+	.wraprecipe .grid {padding-left: 15%;}
+
+	/*여기부터 연두 소개*/
+	#container .how .imgvisual {display: none;}
+	#container .how .imgvisualmini {display: block;}
+	#container .how .imgvisualmini img {width: 80%; margin-bottom: 30px;}
+	
+	#container .use {width: 100%;}
+	#container .use .usevisual {width: 90%;}
+	/*#container .use .imgvisualmini2 img {width: 50%;}*/
+
+
+	#container .usevisual {position: relative; width: 845px; height: 288px; margin: 86px auto 88px auto; background: none;}
+	#container .use .usevisual .use1 li:nth-child(1) {top: 17px; margin-left: -200px; padding-right: 0px; padding-bottom: 15px; background: none; text-align: center;}
+	#container .use .usevisual .use1 li:nth-child(2) {top: 17px; margin-left: 0px; padding-left: 0px; background: none; text-align: center;}
+	#container .use .usevisual .use1 li:nth-child(3) {top: 158px; margin-left: -183px; padding-right: 0px; background: none; text-align: center;}
+	#container .use .usevisual .use1 li:nth-child(4) {top: 158px; margin-left: 42px; padding-left: 0px; padding-bottom: 0; background: none; text-align: center;}
+	#container .use .subtitde {}
+
+
+/*	footer {height: 120px; background-color: #30332e;}
+	footer .footerlogo {display: block; position: absolute; top: 34px; left: 0;}
+	footer .footerinfo {float: left;}
+	footer .footerinfo .link {margin: 0 0 11px 0; color: #fff; line-height: 1em; letter-spacing: -0.05em; font-size: 15px;}
+	footer .footerinfo .link ul {overflow: hidden;}
+	footer .footerinfo .link ul li {float: left;}
+	footer .footerinfo .link ul li a {color: inherit; text-decoration: none; line-height: 1em; outline: none;}
+	footer .footerinfo .link ul li a:hover {text-decoration: underline;}
+	footer .footerinfo .link ul li+li {margin-left: 10px;}
+	footer .footerinfo p {display: block; margin: 0 0 20px 0; color: rgba(255,255,255,.5); line-height: 1em; letter-spacing: -0.03em; font-size: 12px;}*/
+	footer .footerinfo .award {position: static; display: none;}
+	footer .footerinfo .award .footerimg {visibility: visible;}
+}
+
+
+
+@media screen and (max-width: 790px) {
+
+	#container .visual2 .item {position: relative;}
+ 	#container .visual2 .item .txtarea .tit {display: none;}
+ 	#container .visual2 .item .txtarea .txt {display: none;}
+	#container .visual2 .item .product {margin-left: 10%; left: 0;}
+	#container .visual2 .item .txtarea {right: 0; top: 47%; margin-left: -16%;}
+
+
+	/*여기부터 story*/
+	#container .yondufind {padding-top: 180px;}
+	#container .yondufind h2 {font-size: 2.1em;}
+	#container .yondufind p {font-size: 1.2em;}
+
+	#container .yonduadd ul {position: static; width: 100%; height: 388px; margin: 0 auto; background-image: url(../img/cont1_visual_bg.png);}
+	#container .yonduadd ul li {position: static; height: 27px; padding: 32px 8%;
+    font-size: 18px; width: 76%; margin-left: 11%; margin-top: 12px;}
+
+	/*여기부터 우리맛레시피*/
+
+	.wraprecipe span,
+	.wraprecipe .grid {padding-left: 15%;}
+	#container .recipetit h2 {font-size: 1.5em;}
+	#container .recipetit p {font-size: 1em;}
+
+	/*여기부터 연두 소개*/
+	.footerinner {padding: 26px 0 0 10px; width: 100%;}
+	footer .footerlogo {display: none;}
+
+}
+
+@media screen and (max-width: 580px) {
+	#container .reform #search {width: 85%;}
+	#container .searchhelper {width: 400px;}
+
+	/*여기부터 우리맛레시피*/
+
+	.wraprecipe span,
+	.wraprecipe .grid {padding-left: 21%;}
+
+	/*여기부터 연두는 지금*/
+
+	#nowwrap .grid {display: block; min-width: 100%; margin: auto; padding: 40px 0 28px 0;}
+	#nowwrap header {background-color: #fff;}
+	/* clear fix */
+	#nowwrap .grid:after {content: ''; display: block; clear: both;}
+
+	/* ---- #nowwrap .grid-item ---- */
+
+	#nowwrap .grid .grid-item {width: 100%; height: 250px;}
+	#nowwrap .grid .grid-item .thumb {width: 100%; height: 50%;}
+	#nowwrap .grid .grid-item .textarea {width: 100%; height: 124px;}
+	#nowwrap .grid .grid-item .textarea .tit {width: 100%; font-size: 1em;}
+	#nowwrap .grid .grid-item .textarea .day {font-size: 0.8em;}
+
+	#nowwrap #container .sort input {font-size: 0.7em;}
+	
+
+
+}
+
+@media screen and (max-width: 480px) {
+	header nav .gnb {display: none;}
+}
+
+
+@media screen and (max-width: 450px) {
+	#container .visual2 .item .txtarea a {display: none;}
+	#container .visual2 .item .product {margin-left: 20%;}
+
+	#container .yondufind h2 {font-size: 1.5em;}
+	#container .yondufind p {font-size: 1.0em;}
+	#container .yonduadd p {font-size: 1em;}
+	#container .yonduadd h2 {font-size: 1.5em;}
+	#container .yondugood h2 {font-size: 1.5em;}
+	#container .global .firsttit {font-size: 1.2em;}
+	#container .global h2 {font-size: 1.5em;}
+	#container .global .titinfo{font-size: 1em;}
+	#introwrap p {font-size: 1em;}
+	#container .how h2 {font-size: 1.5em;}
+	
+	/*여기부터 우리맛레시피*/
+
+	.wraprecipe span,
+	.wraprecipe .grid {padding-left: 17%;}
+	#container .reform #search {width: 80%;}
+	#container .searchhelper {width: 300px;}
+
+	/*여기부터 연두 소개*/
+
+	#container .usevisual {position: relative;
+    width: 845px;
+    height: 400px;
+    margin: 86px auto 88px auto;
+    background: none;
+	}
+	
+	#container .use .usevisual .use1 li {position: static; }
+
+	#container .use .usevisual .use1 li:nth-child(1) {margin-left: 0px;}
+	#container .use .usevisual .use1 li:nth-child(2) {margin-left: 0px;}
+	#container .use .usevisual .use1 li:nth-child(3) {margin-left: 0px; padding-bottom: 17px;}
+	#container .use .usevisual .use1 li:nth-child(4) {margin-left: 0px; padding-bottom: 17px;}
+	#container .use .subtitde2 {display: block;}
+}
+

@@ -1,0 +1,110 @@
+#wrap {position: relative; width: 100%; height: 1000px; font-family: 'Roboto Slab', serif; font-family: 'Noto Sans KR', sans-serif;}
+#wrap #main_video {position: absolute; top: 50%; bottom: 0; right: 0; left: 50%;
+min-width: 100%; min-height: 100%; width: 100%; z-index: -100; object-fit: cover;
+transform: translate(-50%,-50%);}
+
+/*header {color: #fff;}
+header nav {position: fixed; top: 0; left: 0; display: block; width: 100%; height: 75px; border-bottom: 1px solid #888; z-index: 10;}
+header nav ul {overflow: hidden;}
+header nav ul li {float: left; width: 25%; height: 100%; font-size: 20px; text-align: center; line-height: 75px;}
+header nav ul li a {display: block;}
+header nav ul li a:hover {background-color: transparent; border-bottom: 2px solid #35b1ff; height: 75px; color: #ada8a8;}*/
+
+#container {}
+#container nav {color: #fff; overflow: hidden; width: 110px;}
+#container nav i {float: left; position: relative; margin-right: 10px; margin-bottom: 30px; font-size: 17px; cursor: pointer;}
+#container nav i:after {content: ""; }
+#container nav i.active {font-size: 20px; color: #eee; white-space: nowrap; border-bottom: 2px solid #35b1ff;}
+#container section {display: block; /*height: 1000px;*/}
+#container .maintit {text-align: center; color: #fff;}
+#container .maintit .maintitinfo {padding-top: 18%;}
+#container .maintit .maintitinfo h3 {font-size: 100px; white-space: nowrap;    overflow: hidden; border-right: .02em solid #fff; animation: typing 2s steps(23, end), blink-caret 1s step-end infinite; margin: auto; animation-fill-mode: both;}
+#container .maintit .maintitinfo p {font-size: 50px;}
+#container .maintit .maintitinfo p:nth-child(2) {position: relative; margin-bottom: 40px;}
+#container .maintit .maintitinfo p:nth-child(2):after {content: ""; position: absolute; width: 50px; height: 2px; background-color: #fff; bottom: -29px; left: 49%;}
+
+#container .about {background-image: url(../img/bg2.jpg); background-size: cover; text-align: center; color: #fff;}
+#container .about .aboutwrap {padding-top: 65px;}
+#container .about .aboutwrap .aboutname {margin-bottom: 30px;}
+#container .about .aboutwrap .aboutname h3 {font-size: 48px; padding-bottom: 10px;}
+#container .about .aboutwrap .aboutname img {width: 300px; border-radius: 30px; margin-bottom: 10px;}
+#container .about .aboutwrap .aboutname p {font-size: 20px; padding-bottom: 10px;}
+
+#container .about .aboutwrap .favorite {}
+#container .about .aboutwrap .favorite h3 {position: relative; font-size: 20px; padding-bottom: 20px;}
+#container .about .aboutwrap .favorite h3:after {content: ""; position: absolute; bottom: 0; left: 475px; display: block; width: 50px; height: 2px; background-color: #fff;}
+#container .about .aboutwrap .favorite ul {padding-top: 20px;}
+#container .about .aboutwrap .favorite ul li {display: inline-block;}
+#container .about .aboutwrap .favorite ul li img {width: 40px; height: 40px; vertical-align: middle; margin-right: 5px; margin-left: 3px;}
+
+
+#container .Experience {background-image: url(../img/bg3.jpg); background-size: cover; text-align: center; color: #fff;}
+#container .Experience .Experienceinfo {display: block; padding-top: 250px; text-align: left; margin: auto;}
+#container .Experience .Experienceinfo .con1 {position: relative; margin-bottom: 80px;}
+#container .Experience .Experienceinfo .con1:after {content: ""; position: absolute; bottom: -45px; left: 41%; display: block; width: 50px; height: 2px; background-color: #fff;}
+#container .Experience .Experienceinfo .con1 h2 { font-size: 32px; margin-bottom: 30px;}
+#container .Experience .Experienceinfo .con1 .date {display: inline-block; font-size: 20px; text-align: left;}
+#container .Experience .Experienceinfo .con1 .date h3 {margin-bottom: 5px;}
+#container .Experience .Experienceinfo .con1 .dateinfo {display: inline-block; font-size: 20px; text-align: left; padding-left: 20px;}
+#container .Experience .Experienceinfo .con1 .dateinfo h3 {margin-bottom: 5px;}
+
+
+#container .Experience .Experienceinfo .con2 .subtit {position: relative; bottom: 33px; display: inline-block; font-size: 30px; margin-right: 20px;}
+#container .Experience .Experienceinfo .con2 p {font-size: 20px;}
+#container .Experience .Experienceinfo .con2 .ablity {display: inline-block; margin-right: 20px;}
+#container .Experience .Experienceinfo .con2 .ablity h3 {}
+#container .Experience .Experienceinfo .con2 .ablity p {text-align: left;}
+#container .Experience .Experienceinfo .con2 .ablity2 {display: inline-block;}
+#container .Experience .Experienceinfo .con2 .ablity2 h3 {}
+#container .Experience .Experienceinfo .con2 .ablity2 p {text-align: left;}
+
+
+#container .portfolio {background-image: url(../img/bg4.jpg); background-size: cover; text-align: center; color: black;}
+#container .portfolio ul {overflow: hidden; padding-top: 230px; padding-left: 100px;}
+#container .portfolio ul li {float: left; width: 300px; height: 225px; background-color: #eee; margin: 10px 10px 0 0; border-radius: 5px;}
+#container .portfolio ul li a {display: block; width: 100%; height: 100%; position: relative;}
+#container .portfolio ul li a .thumb {display: block; width: 100%; height: 100%;}
+#container .portfolio ul li a .thumb {overflow: hidden; border-radius: 5px;}
+#container .portfolio ul li a:after {display: block; position: absolute; top: 0; left: 0; bottom: 0; background-color: black; width: 300px; opacity: 0.4; transition: all 0.8s;}
+#container .portfolio ul li a:hover:after {content: "";}
+#container .portfolio ul li a:hover .thumbinfo span {display: block;}
+
+#container .portfolio ul li a .thumbinfo {}
+#container .portfolio ul li a .thumbinfo span {display: none; position: relative; bottom: 150px; color: #fff; z-index: 5; font-size: 20px;}
+#container .portfolio ul li a .thumbinfo .tumbtit {position: relative; margin-bottom: 20px;}
+#container .portfolio ul li a .thumbinfo .tumbtit:after {content: ""; position: absolute; bottom: -12px; left: 47%; display: block; width: 20px; height: 2px; background-color: #fff;}
+#container .portfolio ul li a .thumbinfo .tumbsub {font-size: 16px;}
+
+#container .portfolio ul li:nth-of-type(1) a .thumb {background-image: url(../img/port1.PNG); background-size: 100%; }
+#container .portfolio ul li:nth-of-type(2) a .thumb {background-image: url(../img/port2.PNG); background-size: 100%; }
+#container .portfolio ul li:nth-of-type(3) a .thumb {background-image: url(../img/port3.PNG); background-size: 100%; }
+#container .portfolio ul li:nth-of-type(4) a .thumb {background-image: url(../img/port4.PNG); background-size: 100%; }
+#container .portfolio ul li:nth-of-type(5) a .thumb {background-image: url(../img/port5.PNG); background-size: 100%; }
+#container .portfolio ul li:nth-of-type(6) a .thumb {background-image: url(../img/port6.PNG); background-size: 100%; }
+#container .portfolio ul li:nth-of-type(7) a .thumb {background-image: url(../img/port7.PNG); background-size: 100%; }
+#container .portfolio ul li:nth-of-type(8) a .thumb {background-image: url(../img/port8.PNG); background-size: 100%; }
+
+#container .portfolio ul li:hover:not(:nth-of-type(8)) a .thumb {background-size: 150%; transition: all 1s;}
+
+#container .lastpage {background-image: url(../img/bg4.jpg); background-size: cover; text-align: center; color: #fff;}
+#container .lastpage h2 {font-size: 100px; padding-top: 20%;}
+
+
+
+@keyframes typing {
+    from { 
+    	width: 0; 
+    } 
+    to { 
+    	width: 8em; 
+	} 
+} 
+
+@keyframes blink-caret { 
+    from, to { 
+    	border-color: transparent 
+    } 
+    50% { 
+   		border-color: #fff; 
+    } 
+}

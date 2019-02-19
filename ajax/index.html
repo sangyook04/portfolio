@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <title>Ajax</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <style type="text/css">
+   		/* RESET */
+    	* {margin: 0; padding: 0; border: 0; outline: 0; color: inherit; font-size: 1em; font-weight: normal; font-style: normal; text-decoration: none; box-sizing: border-box;}
+    	ul,ol {list-style: none;}
+    	input[type=button], input[type=submit], button, a {cursor: pointer;}
+
+   		/* GLOBAL */
+   		#wrap {padding-top: 80px;}
+   		.inner {margin: auto; padding: 0 40px; width: 100%; max-width: 1280px;}
+   		.clearfix:after {content: ""; display: block; clear: both;}
+
+   		/* LAYOUT */
+
+   		.bx {}
+   		.bx input {padding: 5px 10px 6px; border-radius: 6px; color: #fff; font-weight: bold; background-color: #ddd;}
+   		.bx input.active {color: #b00;}
+
+   		ul {}
+   		ul li {float: left; margin-top: 8px; padding: 0 4px; width: 25%;}
+   		ul li a {position: relative; display: block;}
+   		ul li a .thumb {padding: 75% 50%; background: #ddd 50% 0 no-repeat; background-size: cover;}
+   		ul li a .info {padding: 10px; border: 1px solid #ddd; border-top: 0;}
+   		ul li a .info .name {overflow: hidden; color: #666; text-overflow: ellipsis; white-space: nowrap;}
+   		ul li a .info .price {margin-top: 5px; color: #b00; font-size: 1.375em; font-weight: bold;}
+   		ul li a .info .price:after {content: "원";}
+   		ul li a i {display: block; position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; text-align: center;  background-color: rgba(200,0,0,0.7); border-radius: 15px;}
+   		ul li a i:after {content: "NEW"; color: #fff; font-size: 10px;font-weight: bold; line-height: 30px;}
+   </style>
+</head>
+<body>
+   <div id="wrap">
+   		<div class="inner">
+			<div class="bx">
+				<input type="button" value="전체보기" data-attr="number" class="active">
+				<input type="button" value="낮은가격순" data-attr="price">
+				<input type="button" value="높은가격순" data-attr="price" data-sort="reverse">
+				<input type="button" value="이름순" data-attr="name">
+				<input type="button" value="최신등록순" data-attr="date" data-sort="reverse">
+			</div>
+			<ul class="list clearfix">
+				<li>
+					<a href="#">
+						<div class="thumb"></div>
+						<div class="info">
+							<p class="name"></p>
+							<p class="price"></p>
+						</div>
+					</a>
+				</li>
+   			</ul>
+   		</div>
+   </div>
+</body>
+<script type="text/javascript">
+
+	var today = new Date ();
+
+
+
+	var info, attr, reverse; // 전역변수로 만들긔 
+
+   $.ajax({
+      url : './data/data.json',
+      async : false,  
+      success :function(data){
+        info = data;
+      }
+   });
+
+   var o = $('ul li'); 
+
+   $('ul li').remove(); // load자체를 삭제하는 메소드.
+   
+   var idx = 0;
+
+   function addComma(num){
+	   	num=num.toString(); //문자열을 만들어주는과정 num+=''; 도 가능
+
+	   	var len = num.length;
+	   	var X = len%3;
+
+	   	var str = num.substring(0,X);
+
+	   	for (var i = X; i < len; i+=3) {
+	   		str = str+','+num.substring(X, X+3);
+	   	}
+	   	if (str.charAt(0)==',') str = str.substring(1);
+	   	return str;
+   }
+
+
+
+   $(window).scroll(function(){ //스크롤이 됐을 때
+
+
+   	  
+
+   	  var attr = $('input.active').attr('data-attr'); //정렬기준으로 할 문자
+
+      var windowTop = $(window).scrollTop(); // 위에서부터 내렸을 때 높이. 브라우저의 위에 높이.
+      var windowHeight = $(window).height(); //윈도우에 높이
+      var wrapHeight = $('#wrap').innerHeight();  // 패딩값에 높이.
+
+      if(windowTop+windowHeight>=wrapHeight-10){ //windowTop+windowHeight -> bottom값의 기준이 됨. 갭차이가 있어야 ul이 생김->(-10)
+
+         for (var i=0; i<4; i++){ // 4개를 생성하기 위해서 반복문인 for을 사용함. 
+
+         	if(!info[idx]) return false
+
+               o.find('a').attr('href', info[idx].path);
+               o.find('.thumb').css('background-image' , 'url('+info[idx].thumb+')');
+               o.find('.name').text(info[idx].name);
+               o.find('.price').text(addComma(info[idx].price));
+
+               var y = info[idx].date.slice(0,4); // 2017
+			   var m = info[idx].date.slice(4,6)-1; // 00
+			   var d = info[idx].date.slice(6); // 01
+			   var date = new Date(y,m,d);
+
+			   var gap = today - date;
+
+			   o.find('a i').remove();
+			   if(gap < 1000*60*60*24*30) {
+			   	  o.find('a').append('<i></i>');	
+			   } 
+
+               o.clone().appendTo('ul'); 
+               idx++;
+         }; 
+
+         $(window).scroll();
+      }
+
+   }).scroll(); // 그리고 스크롤을 시켜라.
+
+   $('.bx input').click(function(){
+
+   		var attr = $(this).attr('data-attr');
+   		var reverse = $(this).attr('data-sort');
+
+
+
+   	  	info.sort(function(a,b){
+
+   	  		a[attr]<b[attr] ? sort = -1 : sort = 1;
+   	  		if (reverse) sort*=-1; //reverse가 있다면 역순.
+   	  		return sort;
+   	  		});
+
+
+
+   		$('ul li').remove();
+   		idx=0;
+   		$(window).scroll();
+   		$('input').removeClass('active');
+   		$(this).addClass('active')
+   });
+
+	// var now_date = new Date; // 현재 시간
+	// var leng = 4;
+	// var idx = 0;
+	// var O = $('ul li').clone(); // li를 복사하고 난다음
+	// $('ul li').remove(); // li를 제거해준다.
+
+
+	// function add_comma(num){ // 숫자사이에 ,를 추가해주는 함수
+
+	// 	num = num.toString(); // '125000'
+
+	// 	var len = num.length; // 7
+	// 	var X = len%3; // 1
+
+	// 	var str = num.substring(0,X); //  str = '1';
+
+	// 	for (var i = X; i < len; i+=3) { // 1: i=1 , 2: i=4
+
+	// 		str = str+','+num.substring(i,i+3);  // str = '1,250'; str = '1,250,000';
+	// 	}
+
+	// 	if (str.charAt(0)==',') str = str.substring(1);
+
+	// 	return str;
+	// }
+
+	// $(window).scroll(function(){
+
+	// 	var T = $(window).scrollTop();
+	// 	var H = $(window).height();
+	// 	var h = $('#wrap').innerHeight();
+
+	// 	if (T+H>=h-10) {
+
+	// 		$.ajax({
+	// 			url : './data/data.json',
+	// 			success : function(data){ // data = [{},{},{},{},{},{},{},{}......];
+
+	// 				var attr = $('input.active').attr('data-attr'); // 정렬기준으로 할 문자열
+	// 				var reverse = $('input.active').attr('data-sort'); // 역순유무
+
+	// 				data.sort(function(a,b){ // 객체의 속성값에 의해 배열을 재 배치
+	// 					a[attr]<b[attr] ? sort = -1 : sort = 1;
+	// 					if (reverse) sort*=-1; // reverse가 있다면 역순...
+	// 					return sort;
+	// 				});
+
+	// 				for (var i=0; i<leng; i++) {
+
+	// 					var info = data[idx++];
+	// 					if (!info) return false;
+	// 					var prod = O.clone();
+
+
+	// 					var y = info.date.slice(0,4); // 2017
+	// 					var m = info.date.slice(4,6)-1; // 00
+	// 					var d = info.date.slice(6); // 01
+	// 					item_date = new Date(y,m,d); // 아이템을 등록한 날
+
+	// 					var gap = Math.floor((now_date-item_date)/(1000*60*60*24)); // 오늘날자 - 등록한 날자 = 등록된 기간
+
+	// 					prod.find('a').attr('href' , info.path);
+	// 					prod.find('.thumb').css('background-image' , 'url('+info.thumb+')');
+	// 					prod.find('.name').text(info.name);
+	// 					prod.find('.price').text(add_comma(info.price));
+	// 					if (gap<=30) prod.find('a').append('<i></i>'); // 등록일이 30일 이내이면 i삽입
+
+	// 					$('.list').append(prod);
+	// 				}
+
+	// 				$(window).scroll();
+	// 			},
+	// 			error : function(err){
+	// 				console.log(err);
+	// 			}
+	// 		});
+	// 	}
+	// }).scroll();
+
+
+
+	// $('input').on('click', function(){
+
+	// 	idx = 0;
+	// 	$('ul li').remove();
+	// 	$(window).scroll();
+	// 	$('input').removeClass('active');
+	// 	$(this).addClass('active');
+	// });
+
+
+</script>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>요리에센스 연두해요~</title>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.theme.default.css">
+	<!-- js -->
+	<script src="./lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="./js/isotope.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+	
+
+    <script>
+    	$(document).ready(function(){
+
+    		$('.grid').isotope({
+			  // options
+			  itemSelector: '.grid-item',
+			  masonry: {
+			  	columnWidth: 18,
+			  	qutter: 10,
+			  	horizontalOrder: true
+			  }
+			});
+
+    		$(document).on('click', function(){
+				
+				if ($("input:checkbox[id='menu2btn']").is(":checked") == true){
+
+					$('body').addClass('stop-scrolling');
+
+				}else{
+
+					$('body').removeClass('stop-scrolling');
+
+
+				}
+
+			});
+
+			$(document).scroll(function(){
+
+				if($(this).scrollTop()<$(window).height()){
+
+					$('.top').removeClass('active');
+				} else {
+
+					$('.top').addClass('active');
+				}
+			}).scroll();
+
+			$('.top').click(function() {
+
+				$('html, body').animate({scrollTop : '0'},500);
+			});
+
+		});//ready
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="top">
+			TOP
+		</div>
+		<header class="PC">
+			<div class="inner">
+				<nav>
+					<a class="mainlogo" href="./index.html"></a>
+					<div class="gnb">
+						<ul>
+							<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+							<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+							<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+							<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+							<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+						</ul>
+					</div>
+					<div class="mainmenu">
+						<ul>
+							<li><a href="./story.html">연두 스토리</a></li>
+							<li><a href="./global.html">글로벌 연두</a></li>
+							<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+							<li><a href="./introduce.html">연두 소개</a></li>
+							<li><a href="./now.html">연두는 지금</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<header class="smallPC">
+			<nav>
+				<input type="checkbox" id="menu2btn">
+				<label for="menu2btn" id="buttonmenu">
+					<i></i>
+					<i></i>
+					<i></i>
+				</label>
+				<a href="./index.html"><img class="minlogo" src="./img/mainlogo.png" alt="mainlogo"></a>
+				<div class="mainmenu">
+					<ul class="mainmenu2">
+						<li><img class="menu2logo" src="./img/mainlogo.png" alt="mainlogo"></li>
+						<li><a href="./story.html">연두 스토리</a></li>
+						<li><a href="./global.html">글로벌 연두</a></li>
+						<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+						<li><a href="./introduce.html">연두 소개</a></li>
+						<li><a href="./now.html">연두는 지금</a></li>
+						<li><img class="menu2footer" src="./img/cont2_visual_bg.png" alt="bg"></li>
+					</ul>
+				</div>
+				<div class="gnb">
+					<ul>
+						<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+						<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+						<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+						<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="container">
+			<div class="recipetit">
+				<h2>우리맛 레시피</h2>
+				<p>재료의 참맛, 그에 어울리는 조리법까지 찾아내는 우리맛 연구를 통해<br>새로운 레시피를 제안합니다.</p>
+			</div>
+			<div class="wraprecipe">
+				<form class="reform">
+					<div class="searchhelper">
+						<input type="text" id="search" placeholder="검색어를 직접 입력해 주세요">
+						<input type="submit" id="gogo">
+					</div>
+				</form>
+				<span>총 <b>10</b>개의 레시피가 있습니다.</span>
+				<div class="grid">
+				  <div class="grid-item grid-item--height3">
+				  	<div class="thumb"><img src="./img/20181210094014629733.png" alt="레시피사진"></div>
+		  			<div class="thumbinfo">
+			  			<p class="smalltit">추울 땐 칼칼하게</p>
+			  			<p class="maintit">백순두부찌개</p>
+		  			</div>
+				  </div>
+				  <div class="grid-item grid-item--height2">
+				  	<div class="thumb"><img src="./img/20181120111257584381.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">복잡하고 어려운 김장도 쉽게</p>
+			  			<p class="maintit">배추 절이는 법</p>
+			  		</div>
+				  </div>
+				  <div class="grid-item grid-item--height2">
+				  	<div class="thumb"><img src="./img/20181120111158379506.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">덮밥과 쌀국수까지 일석삼조</p>
+			  			<p class="maintit">모둠 버섯볶음</p>
+			  		</div>
+				  </div>
+				  <div class="grid-item grid-item--height2">
+				  	<div class="thumb"><img src="./img/20181120111040142410.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">용도별로 만드는</p>
+			  			<p class="maintit">초간단 다시마 육수</p>
+			  		</div>
+				  </div>
+				  <div class="grid-item grid-item--height3">
+				  	<div class="thumb"><img src="./img/20181109112731891543.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">우리 아이 입맛에도 딱</p>
+			  			<p class="maintit">연두비빔국수</p>
+			  		</div>
+				  </div>
+				  <div class="grid-item grid-item--height3">
+				  	<div class="thumb"><img src="./img/20181109113001619062.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">무의 중간 부위를 활용한</p>
+			  			<p class="maintit">고등어 무 조림</p>
+			  		</div>
+				  </div>
+				  <div class="grid-item grid-item--height2">
+				  	<div class="thumb"><img src="./img/20181109112920550616.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">재래김과 돌김, 뭐가 다를까?</p>
+			  			<p class="maintit">종류별 김 특징</p>
+			  		</div>
+				  </div>
+				  <div class="grid-item grid-item--height3">
+				  	<div class="thumb"><img src="./img/20181109112826197805.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">밀가루 걱정없이 맛있는</p>
+			  			<p class="maintit">미역새우전</p>
+			  		</div>
+				  </div>
+				  <div class="grid-item">
+				  	<div class="thumb"><img src="./img/20180921033315572088.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">마늘없이도 맛있는</p>
+			  			<p class="maintit">추석 탕국</p>
+			  		</div>
+				  </div>
+				  <div class="grid-item">
+				  	<div class="thumb"><img src="./img/20181109112632794311.png" alt="레시피사진"></div>
+			  		<div class="thumbinfo">
+			  			<p class="smalltit">원팬으로 만드는</p>
+			  			<p class="maintit">콩나물&숙주나물볶음</p>
+			  		</div>
+				  </div>
+				</div>
+			</div>
+		</div><!-- container -->
+		<footer>
+			<div class="footerinner">
+				<img class="footerlogo" src="./img/footer_logo.png" alt="푸터로고">
+				<div class="footerinfo">
+					<div class="link">
+						<ul>
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">개인정보취급방침</a></li>
+							<li><a href="#">이메일 무단수집거부</a></li>
+						</ul>
+					</div>
+					<p>서울시 중구 충무로2 샘표 식품주식회사 우)04557 고객지원실 : 080-996-7777 FAX : 070-4275-5285</p>
+					<p>ⓒ SEMPIO FOODS COMPANY</p>
+					<a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=8059" target="_blank" class="award"><img src="./img/icon_awrad2018.png" alt="어워드"></a>
+				</div>
+			</div>
+		</footer>
+	</div><!-- wrap -->
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* RESET */
+*,:before,:after {margin: 0; padding: 0; color: inherit; text-decoration: inherit; font-style: inherit; border: 0 solid transparent; outline: 0 solid transparent; background: transparent none center center no-repeat; box-sizing: border-box;}
+ul, ol, li {list-style: none;}
+table {table-layout: fixed;}
+h1, h2, h3, h4, h5, h6 {font-size: inherit; font-weight: inherit;}
+label, button, [type=button], [type=submit], [type=reset], a {cursor: pointer;}
+
+/* CLASS */
+.clearfix:after {content: ""; display: block; clear: both;}
+.ellipsis {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.hidden {display: none; width: 0; height: 0; visibility: hidden; opacity: 0;}
+.bold {font-weight: 700;}
+
+/* GLOBAL */
+[type=checkbox], [type=radio] {display: none;}
+.inner {display: block; position: relative; margin: auto; width: 1250px; height: 100%; overflow: hidden;}
+.inner:after {content: ""; display: block; clear: both;}
+
+.footerinner {display: block; position: relative; margin: auto; width: 1250px; height: 100%; overflow: hidden; padding: 26px 0 0 258px;}
+.footerinner:after {content: ""; display: block; clear: both;}
+
+.goodinner {display: block; position: relative; margin: auto; width: 923px; height: 100%; overflow: hidden;}
+.goodinner:after {content: ""; display: block; clear: both;}
+
+.txt_over_unit {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-wrap: normal;}
+
+strong {color: #82b434;}
+
+.point {display: inline-block; color: #82b434;}
+input.active {color: #6a9b2f;} 
+body.stop-scrolling {height: 100%; overflow: hidden;}
+

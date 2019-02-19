@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>요리에센스 연두해요~</title>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.theme.default.css">
+	<!-- js -->
+	<script src="./lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="./js/isotope.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+
+
+    <script>
+    	$(document).ready(function(){
+
+   //  		$('.grid').isotope({
+			//   // options
+			//   itemSelector: '.grid-item',
+			//   masonry: {
+			//   	columnWidth: 18,
+			//   	qutter: 10,
+			//   	horizontalOrder: true
+			//   }
+			// });
+
+			var today = new Date(); 
+
+			var info;
+
+			$.ajax({ 
+				url : './data/data2.json',
+				async : false, // 강제로 동기화시켜 data를 전역에 쓸수 있도록한다.
+				success : function (data2){
+					info = data2; 
+				}
+			});
+
+			console.log(info);
+
+			var O = $('.grid .grid-item'); 
+			$('.grid .grid-item').remove();
+			var idx = 0; // 객체를 넣기위한 초기인덱스값 (0번째부터 순차적으로 넣을것이기 때문에)
+
+			$(window).scroll(function(){ 
+
+				var windowTop = $(window).scrollTop(); // window 스크롤 높이
+				var windowHeight = $(window).height(); // window 창 높이
+				var wrapHeight = $('#nowwrap').innerHeight(); // #wrap의 padding-box 높이
+
+				if (windowTop+windowHeight>=wrapHeight-10) {
+				// 브라우저 아래기준의 scrollTop 과 #wrap의 높이값 비교
+				// li가 삽입되면서 #wrap의 높이가 커지기 전까지 계속 실행 
+
+					for(var i=0; i<2; i++){ 
+
+						if (!info[idx]) return false; // 불러올 객체가 없다면 중지!
+
+						// 불러올 객체가 있다면 저장해놓은 li를 가공~~
+						O.find('a').attr('href', info[idx].path);
+						O.find('.thumb').css('background-image', 'url('+info[idx].thumb+')');
+						O.find('.thumb').css('background-size', '100%');
+						O.find('.tit').text(info[idx].tit);
+						O.find('.day').text(info[idx].day);
+
+						var jsonday = info[idx].day;
+						var jsondaynew = jsonday.substr(0,4)+jsonday.substr(5,2)+jsonday.substr(8,2);
+
+						// console.log(jsondaynew);
+
+						var y = jsondaynew.slice(0,4); 
+						var m = jsondaynew.slice(4,6)-1; 
+						var d = jsondaynew.slice(6); 
+						
+						// console.log(y);	
+						// console.log(m);
+						// console.log(d);
+
+						var date = new Date(y,m,d); // 아이템을 등록한 날
+						var gap = today - date; // 오늘 - 등록한날 (gap은 밀리세컨즈단위로 대입)
+
+						// console.log(date);	
+						// console.log(gap);
+
+						O.find('.thumb i').remove(); // i를 일단 지워주고 난다음 조건에 따라 삽입
+						if (gap < 1000*60*60*24*60) { // 등록한지 60일이 안되었다면...
+							O.find('.thumb').append('<i></i>'); 
+						}
+
+						O.clone().appendTo('.grid'); // ul에 복사된 li를 넣는다.
+						idx++; 
+					}		
+					$(window).scroll();
+				}
+				
+			}).scroll(); 
+
+			$('.sort input').click(function(){ 
+
+				var newsort = $(this).attr('data-attr'); // 클릭된 버튼에 data-attr 속성을 문자열로 저장
+				var reverse = $(this).attr('data-sort'); // 리버스 유무 저장
+
+				info.sort(function(a,b){ // 객체의 속성값에 의해 배열을 재정렬
+					a[newsort]<b[newsort] ? sort = -1 : sort = 1;
+					if (reverse) sort*=-1; // reverse가 있다면 역순...
+					return sort;
+				});
+
+				$('.grid .grid-item').remove(); // 버튼이 클릭되면 일단 기존에 있던 li를 모두 제거
+				idx = 0; // 재정렬된 info에서 객체들을 다시 첫번째부터 사용하기위해 index값을 초기화
+				$(window).scroll(); // 버튼이 눌렸을때 scoll을 강제로 발생시켜 scroll이벤트를 실행시킨다.
+				$('input').removeClass('active');
+				$(this).addClass('active');
+			});
+
+			$(document).on('click', function(){
+				
+				if ($("input:checkbox[id='menu2btn']").is(":checked") == true){
+
+					$('body').addClass('stop-scrolling');
+
+				}else{
+
+					$('body').removeClass('stop-scrolling');
+				}
+
+			});
+
+			$(document).scroll(function(){
+
+				if($(this).scrollTop()<$(window).height()){
+
+					$('.top').removeClass('active');
+				} else {
+
+					$('.top').addClass('active');
+				}
+			}).scroll();
+
+			$('.top').click(function() {
+
+				$('html, body').animate({scrollTop : '0'},500);
+			});
+
+		});//ready
+	</script>
+</head>
+<body>
+	<div id="nowwrap">
+		<div class="top">
+			TOP
+		</div>
+		<header class="PC">
+			<div class="inner">
+				<nav>
+					<a class="mainlogo" href="./index.html"></a>
+					<div class="gnb">
+						<ul>
+							<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+							<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+							<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+							<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+							<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+						</ul>
+					</div>
+					<div class="mainmenu">
+						<ul>
+							<li><a href="./story.html">연두 스토리</a></li>
+							<li><a href="./global.html">글로벌 연두</a></li>
+							<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+							<li><a href="./introduce.html">연두 소개</a></li>
+							<li><a href="./now.html">연두는 지금</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<header class="smallPC">
+			<nav>
+				<input type="checkbox" id="menu2btn">
+				<label for="menu2btn" id="buttonmenu">
+					<i></i>
+					<i></i>
+					<i></i>
+				</label>
+				<a href="./index.html"><img class="minlogo" src="./img/mainlogo.png" alt="mainlogo"></a>
+				<div class="mainmenu">
+					<ul class="mainmenu2">
+						<li><img class="menu2logo" src="./img/mainlogo.png" alt="mainlogo"></li>
+						<li><a href="./story.html">연두 스토리</a></li>
+						<li><a href="./global.html">글로벌 연두</a></li>
+						<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+						<li><a href="./introduce.html">연두 소개</a></li>
+						<li><a href="./now.html">연두는 지금</a></li>
+						<li><img class="menu2footer" src="./img/cont2_visual_bg.png" alt="bg"></li>
+					</ul>
+				</div>
+				<div class="gnb">
+					<ul>
+						<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+						<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+						<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+						<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="container">
+			<div class="sort">
+				<input type="button" value="전체보기" data-attr="number" class="active">
+				<input type="button" value="최신등록순" data-attr="day" data-sort="reverse">
+				<input type="button" value="이름순" data-attr="tit">
+			</div>
+			<div class="grid">
+			  <div class="grid-item clearfix">
+			  	<a href="#">
+					<div class="thumb"></div>
+					<div class="textarea">
+						<p class="tit"></p>
+						<p class="day"></p>
+					</div>
+				</a>
+			  </div>
+			</div>
+		</div><!-- container -->
+		<footer>
+			<div class="footerinner">
+				<img class="footerlogo" src="./img/footer_logo.png" alt="푸터로고">
+				<div class="footerinfo">
+					<div class="link">
+						<ul>
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">개인정보취급방침</a></li>
+							<li><a href="#">이메일 무단수집거부</a></li>
+						</ul>
+					</div>
+					<p>서울시 중구 충무로2 샘표 식품주식회사 우)04557 고객지원실 : 080-996-7777 FAX : 070-4275-5285</p>
+					<p>ⓒ SEMPIO FOODS COMPANY</p>
+					<a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=8059" target="_blank" class="award"><img src="./img/icon_awrad2018.png" alt="어워드"></a>
+				</div>
+			</div>
+		</footer>
+	</div><!-- wrap -->
+</body>
+</html>

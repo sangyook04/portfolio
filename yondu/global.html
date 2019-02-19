@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>요리에센스 연두해요~</title>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css"> -->
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.theme.default.css">
+	<!-- js -->
+	<script src="./lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="./lib/owl/owl.carousel.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+
+    <script>
+    	$(document).ready(function(){
+
+    		var owl = $('.owl-carousel');
+			owl.owlCarousel({
+			    items:1,
+			    loop:true,
+			    margin:10,
+			    autoplay:true,
+			    autoplayTimeout:4000,
+			    autoplayHoverPause:true
+			});
+			$('.play').on('click',function(){
+			    owl.trigger('play.owl.autoplay',[1000])
+			})
+			$('.stop').on('click',function(){
+			    owl.trigger('stop.owl.autoplay')
+			});
+
+			$('.owl-prev').css('background', 'url(./img/slide_prev.png) center no-repeat').css('top', '235px');
+
+			$('.owl-next').css('background', 'url(./img/slide_next.png) center no-repeat').css('top', '235px').css('margin-left', '495px');
+
+			$('.owl-dots').css('bottom', '-12px').css('left', '4px');
+
+			$(window).resize(function(){     
+
+		       if ($('header').width() == 1190 ){
+
+		              $('.owl-dots').css('bottom', '100px').css('left', '4px');
+
+		       } else {
+		       	 	  $('.owl-dots').css('bottom', '-12px').css('left', '4px');
+		       }
+
+			});
+
+			$(document).on('click', function(){
+				
+				if ($("input:checkbox[id='menu2btn']").is(":checked") == true){
+
+					$('body').addClass('stop-scrolling');
+
+				}else{
+
+					$('body').removeClass('stop-scrolling');
+				}
+
+			});
+			$(document).scroll(function(){
+
+				if($(this).scrollTop()<$(window).height()){
+
+					$('.top').removeClass('active');
+				} else {
+
+					$('.top').addClass('active');
+				}
+			}).scroll();
+
+			$('.top').click(function() {
+
+				$('html, body').animate({scrollTop : '0'},500);
+			});
+
+		});//ready
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="top">
+			TOP
+		</div>
+		<header class="PC">
+			<div class="inner">
+				<nav>
+					<a class="mainlogo" href="./index.html"></a>
+					<div class="gnb">
+						<ul>
+							<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+							<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+							<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+							<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+							<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+						</ul>
+					</div>
+					<div class="mainmenu">
+						<ul>
+							<li><a href="./story.html">연두 스토리</a></li>
+							<li><a href="./global.html">글로벌 연두</a></li>
+							<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+							<li><a href="./introduce.html">연두 소개</a></li>
+							<li><a href="./now.html">연두는 지금</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<header class="smallPC">
+			<nav>
+				<input type="checkbox" id="menu2btn">
+				<label for="menu2btn" id="buttonmenu">
+					<i></i>
+					<i></i>
+					<i></i>
+				</label>
+				<a href="./index.html"><img class="minlogo" src="./img/mainlogo.png" alt="mainlogo"></a>
+				<div class="mainmenu">
+					<ul class="mainmenu2">
+						<li><img class="menu2logo" src="./img/mainlogo.png" alt="mainlogo"></li>
+						<li><a href="./story.html">연두 스토리</a></li>
+						<li><a href="./global.html">글로벌 연두</a></li>
+						<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+						<li><a href="./introduce.html">연두 소개</a></li>
+						<li><a href="./now.html">연두는 지금</a></li>
+						<li><img class="menu2footer" src="./img/cont2_visual_bg.png" alt="bg"></li>
+					</ul>
+				</div>
+				<div class="gnb">
+					<ul>
+						<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+						<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+						<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+						<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="container">
+			<div class="global">
+				<p class="firsttit">세계의 입맛을 사로잡은</p>
+				<h2>우리맛 요리에센스 연두</h2>
+				<p class="titinfo">스페인, 미국, 네덜란드 등 다양한 나라에서 즐기는 요리에센스 연두<br>국내외 유명 셰프들은 <strong>요리에센스 연두를 ‘magic sauce(매직 소스)’</strong>라 부르며 연두에 열광하고 있습니다.</p>
+
+
+				<div class="inner">
+				<div class="owl-carousel owl-theme visual3">
+				
+				    <div class="item">
+				    	<img src="./img/pascal_barbot.jpg" alt="chefimg">
+				    	<div class="cheftext">
+				    		<span class="icon"></span>
+					    	<p style="margin-bottom:70px;">콩을 발효시킨 연두가<br>
+							육수를 낸 것 같은 깊은 맛을<br>
+							낸다는 것이 너무 신비롭습니다.</p>
+					    	<span class="name">파스칼 바흐보</span>
+					    	<span class="ename">Pascal Barbot</span>
+					    	<span class="chefinfo">미슐랭 3스타 셰프, 프랑스</span>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img src="./img/eduard_xatruch.jpg" alt="chefimg">
+				    	<div class="cheftext">
+				    		<span class="icon"></span>
+					    	<p>연두 순은 홍합의 풍미를 살려주어<br>
+							진한 홍합 맛을 즐길 수 있습니다.</p>
+					    	<p style="margin-bottom:40px;">또한, 베어네이즈 소스에<br>
+							연두 순을 사용하여 버터의 맛과 향을 올려주고,<br>구운 버터와 같은 진한 맛을 내줍니다.</p>
+					    	<span class="name">에두아르드 차르투르크</span>
+					    	<span class="ename">Eduard Xatruch</span>
+					    	<span class="chefinfo">디스푸르따르(Disfurtar) 미슐랭 1스타 셰프, 스페인</span>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img src="./img/jaume_biemes.jpg" alt="chefimg">
+				    	<div class="cheftext">
+				    		<span class="icon"></span>
+					    	<p>연두는 매직 소스라고 불러도 될 만큼 놀라운 맛을 냅니다.</p>
+					    	<p>연두 자체의 맛은 거의 느껴지지 않으면서<br>요리를 맛있게 만듭니다.</p>
+					    	<p style="margin-bottom:38px;">콩으로 이런 효과를 낼 수 있다는 것이 놀랍고 신기합니다.</p>
+					    	<span class="name">자우마 비아르네즈</span>
+					    	<span class="ename">Jaume Biemes</span>
+					    	<span class="chefinfo">세계 최초 요리과학연구소 ‘알리시아’ 수석연구원, 스페인</span>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img src="./img/kang_mingu.jpg" alt="chefimg">
+				    	<div class="cheftext">
+				    		<span class="icon"></span>
+					    	<p>일본 요리하면 '칼', 중국 요리하면 ‘불’ 같이<br>한국 음식은 ‘발효, 장(醬)’ 입니다.</p>
+					    	<p>콩발효 기반의 장을 쓰면 더 깊고 독특한 풍미를 줄 수 있죠.</p>
+					    	<p>연두는 콩발효액 기반의 순식물성 에센스로 향이 강하지 않아<br>재료 본연의 맛은 지키되, 음식의 풍미를 놀랍게 상승시켜 줍니다.</p>
+					    	<span class="name">강민구</span>
+					    	<span class="ename">Kang Mingu</span>
+					    	<span class="chefinfo">밍글스 미슐랭 2스타 셰프, 한국</span>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img src="./img/tony_yoo.jpg" alt="chefimg">
+				    	<div class="cheftext">
+				    		<span class="icon"></span>
+					    	<p>좋은 식재료는 좋은 양념과 만나야<br>
+							비로소 빛을 발합니다.</p>
+					    	<p style="margin-bottom:38px;">한국의 전통 발효과학으로 탄생한<br>
+							순식물성 요리에센스 연두는 단순히 음식의 맛을<br>돋우기 위해서 쓰이는 양념을 넘어선 약념(藥念)입니다.</p>
+					    	<span class="name">유현수</span>
+					    	<span class="ename">Tony Yoo</span>
+					    	<span class="chefinfo">두레유, 한국</span>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img src="./img/kim_daechun.jpg" alt="chefimg">
+				    	<div class="cheftext">
+				    		<span class="icon"></span>
+					    	<p>요리를 시작하면서부터 고수해 온 제 원칙이 ‘재료’거든요.<br>철에 제일 맛이 좋은 재료들을 쓰면 많이 조리하지 않아<br>요리가 제맛을 낸답니다.</p>
+					    	<p style="margin-bottom:38px;">연두는 콩발효 에센스라 감칠맛이 풍부하며<br>	제철 재료의 맛을 살려 자연스럽게 간을 할 수 있습니다.</p>
+					    	<span class="name">김대천</span>
+					    	<span class="ename">Kim Daechun</span>
+					    	<span class="chefinfo">톡톡, 한국</span>
+				    	</div>
+				    </div>
+				    <div class="item">
+				    	<img src="./img/jang_jinmo.jpg" alt="chefimg">
+				    	<div class="cheftext">
+				    		<span class="icon"></span>
+					    	<p>연두는 여러 재료를 함께 썼을 때</p>
+					    	<p style="margin-bottom:65px;">재료 하나하나의 맛을 살려줘<br>	맛을 섬세하게 표현할 수 있습니다.</p>
+					    	<span class="name">장진모</span>
+					    	<span class="ename">Jang Jinmo</span>
+					    	<span class="chefinfo">앤드다이닝, 한국</span>
+				    	</div>
+				    </div>
+				</div>
+					</div>
+			</div>
+		</div><!-- container -->
+		<footer>
+			<div class="footerinner">
+				<img class="footerlogo" src="./img/footer_logo.png" alt="푸터로고">
+				<div class="footerinfo">
+					<div class="link">
+						<ul>
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">개인정보취급방침</a></li>
+							<li><a href="#">이메일 무단수집거부</a></li>
+						</ul>
+					</div>
+					<p>서울시 중구 충무로2 샘표 식품주식회사 우)04557 고객지원실 : 080-996-7777 FAX : 070-4275-5285</p>
+					<p>ⓒ SEMPIO FOODS COMPANY</p>
+					<a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=8059" target="_blank" class="award"><img src="./img/icon_awrad2018.png" alt="어워드"></a>
+				</div>
+			</div>
+		</footer>
+	</div><!-- wrap -->
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>요리에센스 연두해요~</title>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.theme.default.css">
+	<!-- js -->
+	<script src="./lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="./lib/owl/owl.carousel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+
+    <script>
+    	$(document).ready(function(){
+
+    		var owl = $('.owl-carousel');
+			owl.owlCarousel({
+			    items:1,
+			    loop:true,
+			    margin:10,
+			    autoplay:true,
+			    autoplayTimeout:4000,
+			    autoplayHoverPause:true
+			});
+			$('.play').on('click',function(){
+			    owl.trigger('play.owl.autoplay',[1000])
+			})
+			$('.stop').on('click',function(){
+			    owl.trigger('stop.owl.autoplay')
+			});
+
+			// $('.owl-dots').hide();
+
+			//next prev 버튼 owl.carousel.css에서 수정
+
+			$('.first').addClass('active');
+
+			$(".first").hover(function() {
+				$('.recipe ul li').removeClass('active');
+			    $(this).addClass('active');
+			});
+
+			$(".second").hover(function() {
+				$('.recipe ul li').removeClass('active');
+			    $(this).addClass('active');
+			});
+
+			$(".third").hover(function() {
+				$('.recipe ul li').removeClass('active');
+			    $(this).addClass('active');
+			    $(this).css('text-decoration', 'none');
+			});
+
+			$(document).on('click', function(){
+				
+				if ($("input:checkbox[id='menu2btn']").is(":checked") == true){
+
+					$('body').addClass('stop-scrolling');
+
+				}else{
+
+					$('body').removeClass('stop-scrolling');
+
+
+				}
+
+			});
+
+			$(document).scroll(function(){
+
+				if($(this).scrollTop()<$(window).height()){
+
+					$('.top').removeClass('active');
+				} else {
+
+					$('.top').addClass('active');
+				}
+			}).scroll();
+
+			$('.top').click(function() {
+
+				$('html, body').animate({scrollTop : '0'},500);
+			});
+
+		});//ready
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="top">
+			TOP
+		</div>
+		<header class="PC">
+			<div class="inner">
+				<nav>
+					<a class="mainlogo" href="./index.html"></a>
+					<div class="gnb">
+						<ul>
+							<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+							<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+							<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+							<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+							<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+						</ul>
+					</div>
+					<div class="mainmenu">
+						<ul>
+							<li><a href="./story.html">연두 스토리</a></li>
+							<li><a href="./global.html">글로벌 연두</a></li>
+							<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+							<li><a href="./introduce.html">연두 소개</a></li>
+							<li><a href="./now.html">연두는 지금</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<header class="smallPC">
+			<nav>
+				<input type="checkbox" id="menu2btn">
+				<label for="menu2btn" id="buttonmenu">
+					<i></i>
+					<i></i>
+					<i></i>
+				</label>
+				<a href="./index.html"><img class="minlogo" src="./img/mainlogo.png" alt="mainlogo"></a>
+				<div class="mainmenu">
+					<ul class="mainmenu2">
+						<li><img class="menu2logo" src="./img/mainlogo.png" alt="mainlogo"></li>
+						<li><a href="./story.html">연두 스토리</a></li>
+						<li><a href="./global.html">글로벌 연두</a></li>
+						<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+						<li><a href="./introduce.html">연두 소개</a></li>
+						<li><a href="./now.html">연두는 지금</a></li>
+						<li><img class="menu2footer" src="./img/cont2_visual_bg.png" alt="bg"></li>
+					</ul>
+				</div>
+				<div class="gnb">
+					<ul>
+						<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+						<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+						<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+						<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="container">
+
+			<div class="owl-carousel owl-theme visual1">
+			    <div class="item"><a href="#"><img src="./img/20180406041700207785.jpg" alt="mainslider"></a></div>
+			    <div class="item"><a href="#">
+		    	<video class="video" autoplay loop muted>
+					<source src="./img/slidervideomain.mp4" type="video/mp4"/>
+				</video></a></div>
+			</div>
+			<div class="inner">
+				<div class="video2">
+					<span>쉽게, 맛있게, 건강하게</span>
+					<h2>이렇게 쉬운 연두요리법</h2>
+					<div class="videobox">
+						<iframe src="https://www.youtube.com/embed/p-sL7M88Jnk?controls=0&showinfo=0&loop=1&autoplay=1&rel=0&enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+
+			<div class="recipe">
+				<div class="inner">
+					<h2>우리맛 레시피</h2>
+					<ul>
+						<li class="first"><a href="http://bit.ly/2qANN8H" target="_blank">
+						<span class="dim"></span>
+						<img src="./img/20181109112138063044.png" alt="메인배너" />
+						<!-- 컨텐츠 사이즈 544 * 266 -->
+						<div class="txtbox">
+							<p class="txt txt_over_unit">고소한 달걀 속 야채 듬뿍</p>
+							<p class="tit txt_over_unit">달걀프리타타</p>
+						</div>
+						</a></li>
+					
+						<li class="second"><a href="http://bit.ly/2ER2spJ" target="_blank">
+						<span class="dim"></span>
+						<img src="./img/20180406032509999101.jpg" alt="메인배너" />
+						<!-- 컨텐츠 사이즈 544 * 266 -->
+						<div class="txtbox">
+							<p class="txt txt_over_unit">설탕을 줄여 건강해요</p>
+							<p class="tit txt_over_unit">양파 불고기</p>
+						</div>
+						</a></li>
+					
+						<li class="third"><a href="https://bit.ly/2xzrs1y" target="_blank">
+						<span class="dim"></span>
+						<img src="./img/20180601015553321528.jpg" alt="메인배너" />
+						<!-- 컨텐츠 사이즈 544 * 266 -->
+						<div class="txtbox">
+							<p class="txt txt_over_unit">이것만 알면 쉬운 버섯 요리</p>
+							<p class="tit txt_over_unit">버섯 손질&볶음</p>
+						</div>
+						</a></li>
+					</ul>
+					<a href="/recipe.do" class="btn_more">더 많은 <b>레시피 보기</b></a>
+				</div><!-- inner -->
+			</div><!-- recipe -->
+
+			<div class="owl-carousel owl-theme visual2">
+			    <div class="item">
+			    	<img class="bgimg" src="./img/cont5_bg1.jpg" alt="slider2img">
+			    	<img class="product" src="./img/cont5_img1.png" alt="연두 제품">
+			    	<div class="txtarea">
+						<p class="tit">요리에센스 연두순</p>
+						<p class="txt">재료와 맛과 향이 순하고 양념이 적은 요리에</p>
+						<a href="http://www.sempio.com/market/yondu/64" target="_blank">구매하기</a>
+					</div>
+			    </div>
+			    <div class="item color1">
+			    	<img class="bgimg" src="./img/cont5_bg2.jpg" alt="slider2img">
+			    	<img class="product" src="./img/cont5_img2.png" alt="연두 제품">
+			    	<div class="txtarea">
+						<p class="tit">요리에센스 연두</p>
+						<p class="txt">재료의 맛과 향이 강하고 양념이 진한 요리에</p>
+						<a href="http://www.sempio.com/market/yondu/62" target="_blank">구매하기</a>
+					</div>
+			    </div>
+			    <div class="item color2">
+			    	<img class="bgimg" src="./img/cont5_bg3.jpg" alt="slider2img">
+			    	<img class="product" src="./img/cont5_img3.png" alt="연두 제품">
+			    	<div class="txtarea">
+						<p class="tit">요리에센스 연두우리콩</p>
+						<p class="txt">깔끔하고 담백한 요리, 이유식에도 OK</p>
+						<a href="http://www.sempio.com/market/yondu/63" target="_blank">구매하기</a>
+					</div>
+			    </div>
+			    <div class="item color3">
+			    	<img class="bgimg" src="./img/cont5_bg4.jpg" alt="slider2img">
+			    	<img class="product" src="./img/cont5_img4.png" alt="연두 제품">
+			    	<div class="txtarea">
+						<p class="tit">요리에센스 연두청양초</p>
+						<p class="txt">깔끔한 매운맛이 필요한 모든 요리에</p>
+						<a href="http://www.sempio.com/market/yondu/187" target="_blank">구매하기</a>
+					</div>
+			    </div>
+			</div>
+		</div>
+		<footer>
+			<div class="footerinner">
+				<img class="footerlogo" src="./img/footer_logo.png" alt="푸터로고">
+				<div class="footerinfo">
+					<div class="link">
+						<ul>
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">개인정보취급방침</a></li>
+							<li><a href="#">이메일 무단수집거부</a></li>
+						</ul>
+					</div>
+					<p>서울시 중구 충무로2 샘표 식품주식회사 우)04557 고객지원실 : 080-996-7777 FAX : 070-4275-5285</p>
+					<p>ⓒ SEMPIO FOODS COMPANY</p>
+					<a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=8059" target="_blank" class="award"><img class="footerimg" src="./img/icon_awrad2018.png" alt="어워드"></a>
+				</div>
+			</div>
+		</footer>
+	</div><!-- wrap -->
+</body>
+</html>

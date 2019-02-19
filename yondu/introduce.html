@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>요리에센스 연두해요~</title>
+	<!-- font -->
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="./lib/owl/owl.theme.default.css">
+	<!-- js -->
+	<script src="./lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="./js/isotope.pkgd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+
+
+    <script>
+    	$(document).ready(function(){
+
+    		$('.grid').isotope({
+			  // options
+			  itemSelector: '.grid-item',
+			  masonry: {
+			  	columnWidth: 18,
+			  	qutter: 10,
+			  	horizontalOrder: true
+			  }
+			});
+
+    		$(document).on('click', function(){
+				
+				if ($("input:checkbox[id='menu2btn']").is(":checked") == true){
+
+					$('body').addClass('stop-scrolling');
+
+				}else{
+
+					$('body').removeClass('stop-scrolling');
+				}
+
+			});
+
+			$(document).scroll(function(){
+
+				if($(this).scrollTop()<$(window).height()){
+
+					$('.top').removeClass('active');
+				} else {
+
+					$('.top').addClass('active');
+				}
+			}).scroll();
+
+			$('.top').click(function() {
+
+				$('html, body').animate({scrollTop : '0'},500);
+			});
+
+		});//ready
+	</script>
+</head>
+<body>
+	<div id="introwrap">
+		<div class="top">
+			TOP
+		</div>
+		<header class="PC">
+			<div class="inner">
+				<nav>
+					<a class="mainlogo" href="./index.html"></a>
+					<div class="gnb">
+						<ul>
+							<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+							<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+							<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+							<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+							<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+						</ul>
+					</div>
+					<div class="mainmenu">
+						<ul>
+							<li><a href="./story.html">연두 스토리</a></li>
+							<li><a href="./global.html">글로벌 연두</a></li>
+							<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+							<li><a href="./introduce.html">연두 소개</a></li>
+							<li><a href="./now.html">연두는 지금</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<header class="smallPC">
+			<nav>
+				<input type="checkbox" id="menu2btn">
+				<label for="menu2btn" id="buttonmenu">
+					<i></i>
+					<i></i>
+					<i></i>
+				</label>
+				<a href="./index.html"><img class="minlogo" src="./img/mainlogo.png" alt="mainlogo"></a>
+				<div class="mainmenu">
+					<ul class="mainmenu2">
+						<li><img class="menu2logo" src="./img/mainlogo.png" alt="mainlogo"></li>
+						<li><a href="./story.html">연두 스토리</a></li>
+						<li><a href="./global.html">글로벌 연두</a></li>
+						<li><a href="./ourrecipe.html">우리맛 레시피</a></li>
+						<li><a href="./introduce.html">연두 소개</a></li>
+						<li><a href="./now.html">연두는 지금</a></li>
+						<li><img class="menu2footer" src="./img/cont2_visual_bg.png" alt="bg"></li>
+					</ul>
+				</div>
+				<div class="gnb">
+					<ul>
+						<li class="bb"><a href="https://blog.naver.com/yondu-recipe" target="_blank">네이버 블로그</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/yondu.recipe" target="_blank">페이스북</a></li>
+						<li class="youtube"><a href="https://www.youtube.com/channel/UCg7AiN5aUVtuthlSwE7eQMQ" target="_blank">유튜브</a></li>
+						<li class="kakao"><a href="https://story.kakao.com/ch/yondu" target="_blank">카카오스토리</a></li>
+						<li class="sam"><a href="http://www.sempio.com/home" target="_blank">샘표</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div id="container">
+			<div class="inner">
+				<div class="how">
+					<img class="pointimg" src="./img/cont2_num1.png" alt="pointimg">
+					<h2>연두는 어떻게 만들어지나요?</h2>
+					<p>연두는 장과 마찬가지로 콩을 발효해 만들었습니다.<br>샘표만의 발효기술을 통해 콩의 천연 맛성분을 에센스화하여<br>국산 야채로 <span class="point">맛의 밸런스를 맞춘 순식물성 콩발효 에센스</span>입니다.</p>
+					<div class="imgvisual">
+						<img class="img1" src="./img/cont1_visual_img1.png" alt="연두생산과정">
+						<img class="img2" src="./img/cont1_visual_img2.png" alt="연두생산과정">
+						<img class="img3" src="./img/cont1_visual_img3.png" alt="연두생산과정">
+					</div>
+					<div class="imgvisualmini">
+						<img class="img4" src="./img/introducemini.png" alt="연두생산과정">
+					</div>
+					<h2>콩은?</h2>
+					<p>콩에는 천연의 맛 성분인 주요 아미노산과 펩타이드가 소고기, 멸치, 표고버섯보다 많고,<br><span class="point">그 자체의 맛과 향이 강하지 않아 원재료 본연의 맛을 살려줍니다.</span></p>
+					<img class="chartimg" src="./img/chart.png" alt="chart">
+				</div>
+			</div><!-- inner -->
+
+				<div class="use">
+					<img class="pointimg" src="./img/cont2_num2.png" alt="pointimg">
+					<h2>연두를 사용하면?</h2>
+					<div class="usevisual">
+						<ul class="use1">
+							<li>연두는 콩을 발효해<br><span class="point">요리 재료가 가진 좋은 맛을</span><br>잘 살려줍니다.</li>
+							<li>푹 고아낸<br><span class="point">깊고 풍부한 맛의 육수</span>를 만들어<br>조리시간도 줄일 수 있습니다.</li>
+							<li><span class="point">복잡한 양념없이</span><br>연두만으로도 요리가<br>맛있고 쉬워집니다.</li>
+							<li>소금 대신 사용하면<br><span class="point">나트륨 섭취를 줄여</span><br>더 건강합니다.</li>
+						</ul>
+						<span class=subtitde>출처 - 스페인 알리시아 연구소</span>
+						<!-- <div class="imgvisualmini2">
+								<img class="img4" src="./img/introducemini2.png" alt="연두생산과정">
+							</div> -->	
+					</div>
+					<span class="subtit">3~4인분 기준 1숟가락 <span class="subtitde2">(기호에 따라 조절하세요)</span></span>
+					<div class="grid">
+						  <div class="grid-item">
+						  	<img src="./img/cont2_graph_img1.png" alt="cookimg">
+							<p class="tit">나물요리</p>
+							<p class="txt">갖은 양념없이 연두만으로 무치면<br>나물의 향과 맛을 그대로</p>
+						  </div>
+						  <div class="grid-item">
+						  	<img src="./img/cont2_graph_img2.png" alt="cookimg">
+							<p class="tit">국, 찌개 요리</p>
+							<p class="txt">국물 요리의<br>맛을 깊고 진하게</p>
+						  </div>
+						  <div class="grid-item">
+						  	<img src="./img/cont2_graph_img3.png" alt="cookimg">
+							<p class="tit">겉절이 등 양념</p>
+							<p class="txt">잘 숙성된 깊은<br>양념의 맛 그대로</p>
+						  </div>
+						  <div class="grid-item">
+						  	<img src="./img/cont2_graph_img4.png" alt="cookimg">
+							<p class="tit">고기, 생선 요리</p>
+							<p class="txt">재료가 가진 비린내, 누린내는<br>없애고 고소하게</p>
+						  </div>
+					</div>
+				</div>
+			
+		</div><!-- container -->
+		<footer>
+			<div class="footerinner">
+				<img class="footerlogo" src="./img/footer_logo.png" alt="푸터로고">
+				<div class="footerinfo">
+					<div class="link">
+						<ul>
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">개인정보취급방침</a></li>
+							<li><a href="#">이메일 무단수집거부</a></li>
+						</ul>
+					</div>
+					<p class="introp">서울시 중구 충무로2 샘표 식품주식회사 우)04557 고객지원실 : 080-996-7777 FAX : 070-4275-5285</p>
+					<p class="introp">ⓒ SEMPIO FOODS COMPANY</p>
+					<a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=8059" target="_blank" class="award"><img src="./img/icon_awrad2018.png" alt="어워드"></a>
+				</div>
+			</div>
+		</footer>
+	</div><!-- wrap -->
+</body>
+</html>
