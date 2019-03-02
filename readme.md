@@ -24,7 +24,7 @@
 - 담당 업무 및 참여도
   - 페이지 제작 100%
   
-#### [4. 교보문고Ebook](https://aloha.dothome.co.kr/Portfolio/ebook/index2.html)
+#### [4. 텐바이텐](http://amstar2.dothome.co.kr/10X10/)
 - 사용 프로그램 및 언어
   - HTML5, CSS3
 - 제작 시기
@@ -32,7 +32,7 @@
 - 담당 업무 및 참여도
   - 페이지 제작 100%
   
-#### [5. 보듬컴퍼니](https://aloha.dothome.co.kr/Portfolio/bodeum/main_index.html)
+#### [5. 제주맥주](http://amstar2.dothome.co.kr/jeju/index.html)
 - 사용 프로그램 및 언어
   - 포토샵, 일러스트, HTML5, CSS3, JAVA script, Jquery
 - 제작 시기
@@ -40,7 +40,7 @@
 - 담당 업무 및 참여도
   - 디자인 기획 및 페이지 제작 100%
   
-#### [6. The body shop](https://aloha.dothome.co.kr/Portfolio/thebodyshop/main_index.html)
+#### [6. 요리에센스 연두](http://amstar2.dothome.co.kr/yondu/)
 - 사용 프로그램 및 언어
   - HTML5, CSS3, JAVA script, Jquery
 - 제작 시기
